@@ -1,5 +1,9 @@
 # Novelist — кликабельный прототип маркетплейса для инди-авторов книг
 
+<img width="260" alt="image" src="https://github.com/user-attachments/assets/e449de7b-00c5-4f56-9ab0-dc7127e29368" />
+<img width="260" alt="image" src="https://github.com/user-attachments/assets/8619831a-b251-4985-9f1d-43751c2a5bc9" />
+<img width="260" alt="image" src="https://github.com/user-attachments/assets/0f7996c9-58d7-46e7-a90f-b9a695885b38" />
+
 ## О проекте
 
 **Novelist** — это социальная сеть / маркетплейс, где инди-авторы публикуют книги, иллюстраторы добавляют визуал, рецензенты оставляют ревью, а читатели покупают и читают контент.
