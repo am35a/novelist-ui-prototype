@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_profile-user-info.htm"-->
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-light shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="profile.html"><i class="fas fa-id-card mr-2"></i>Profile</a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap disabled" href="profile-books.html">Books <span class="badge badge-pill bg-secondary text-light">7</span></a><!-- мои книги -->
+                    <a class="nav-link text-nowrap" href="profile-cycles.html">Cycles <span class="badge badge-pill bg-secondary text-light">2</span></a><!-- мои циклы -->
+                    <a class="nav-link text-nowrap" href="profile-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">189&#8226;16</span></a><!-- мои подписчики * я подписан -->
+                    <a class="nav-link text-nowrap" href="profile-library.html">Library <span class="badge badge-pill bg-secondary text-light">2&#8226;3&#8226;3</span></a><!-- я читаю * я прочел * в закладках -->
+                    <a class="nav-link text-nowrap" href="profile-follows.html">Follows <span class="badge badge-pill bg-secondary text-light">127&#8226;6</span></a><!-- я слежу * за мной следят -->
+                </nav>
+            </div>
+            
+            <section class="container">
+                <header class="d-flex flex-nowrap mb-2">
+                    <h2 class="flex-grow-1">Books</h2>
+                    <button type="button" class="d-none d-md-inline-block my-auto btn btn-link px-2" data-decklist="deck" data-delishift="profileBooks" data-toggle="tooltip" data-placement="top" title="Gallery view"><i class="fas fa-th fa-lg"></i></button>
+                    <button type="button" class="d-none d-md-inline-block my-auto btn btn-link px-2" data-decklist="list" data-delishift="profileBooks" data-toggle="tooltip" data-placement="top" title="List view"><i class="fas fa-th-list fa-lg"></i></button>
+                </header>
+                
+                <div class="position-relative" data-action="clearable">
+                    <input id="inputInBooksSearch" class="form-control" type="search" placeholder="Search by keywords, citation or ect." aria-label="Search">
+                    <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                </div>
+                <div class="position-relative overflow-hidden border-bottom small mb-3">
+                    <div class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                        <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                        <a class="nav-link text-nowrap" href="#">Date<i class="fas fa-sort-amount-up ml-1"></i></a>
+                        <a class="nav-link text-nowrap" href="#">Popular</a>
+                        <a class="nav-link text-nowrap" href="#">Rating</a>
+                        <a class="nav-link text-nowrap" href="#">Comments</a>
+                    </div>
+                </div>
+                <div id="profileBooks" class="card-deck cards-no-header">
+                    <!--div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/9/cover.jpg"
+                                style="background: url(images/books/9/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги - сейчас со скидкой 70%</title>
+                                    <polygon fill="#ec4079" opacity=".9" points="0,128 128,0 256,0 0,256" filter="drop-shadow(0 .125rem .25rem rgba(0,0,0,.75))"></polygon>
+                                    <text fill="#ffffff" font-weight="bold" font-size="90" transform="translate(55 182) rotate(-45)">70%</text>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book9Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book9Rating').starrr({rating:4.2,readOnly:true})</script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-warning" href="reader.html">Read for $0.99 <del class="text-muted">$2.99</del></a>
+                        </div>
+                    </div-->
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/1/cover.jpg"
+                                style="background: url(images/books/1/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book1Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book1Rating').starrr({rating:2.7,readOnly:true})</script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/2/cover.jpg"
+                                style="background: url(images/books/2/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book2Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book2Rating').starrr({rating:3.9,readOnly:true})</script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/3/cover.jpg"
+                                style="background: url(images/books/3/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book3Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book3Rating').starrr({rating:4.4,readOnly:true})</script>
+                                    </script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-warning" href="reader.html">Read for $0.99</a>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/4/cover.jpg"
+                                style="background: url(images/books/4/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book4Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book4Rating').starrr({rating:1.6,readOnly:true})</script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/5/cover.jpg"
+                                style="background: url(images/books/5/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book5Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book5Rating').starrr({rating:4.7,readOnly:true})</script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-warning" href="reader.html">Read for $0.25</a>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/6/cover.jpg"
+                                style="background: url(images/books/6/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book6Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book6Rating').starrr({rating:3.9,readOnly:true})</script>
+                                    </script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                            <span class="h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/books/7/cover.jpg"
+                                style="background: url(images/books/7/preview.jpg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название книги</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="book7Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать.">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>$('#book7Rating').starrr({rating:4.5,readOnly:true})</script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Тип произведения &bull; Жанры">
+                                        <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Роман</a>
+                                            &bull;
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Fantasy</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Magical realism</a>
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="#">Occult detective</a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Книга входит в цикл">
+                                        <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <a class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none" href="cycle.html" title="Одисея Бьйорна">Одисея Бьйорна</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-muted">
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Статус книги">
+                                        <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <span class="text-success">Completed book</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <time class="text-nowrap" datetime="2019-10-22">22 October 2019</time>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            10 &bull; 85 &bull; 75640
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Bookmarked">
+                                        <div class="position-absolute"><i class="fas fa-bookmark"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            9
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviews">
+                                        <div class="position-absolute"><i class="fas fa-glasses"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            1
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid ipsa eveniet perferendis, placeat dolores consectetur recusandae numquam tempora natus quas, optio inventore cumque itaque delectus voluptate ea necessitatibus aut?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer mt-auto">
+                            <a class="btn btn-block btn-warning" href="reader.html">Read for $2</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer>
+                    <button id="buttonMyBooksLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more books...</button>
+                </footer>
+            </section>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

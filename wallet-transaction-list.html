@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_wallet-info.htm"-->
+           
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-white shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="wallet.html"><i class="fas fa-wallet mr-2"></i>Wallet</a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap text-muted" href="wallet-transaction-list.html">Transaction list <span class="badge badge-pill bg-secondary text-light">17&#8226;2&#8226;0</span></a>
+                    <a class="nav-link text-nowrap" href="wallet-statistic.html">Statistic</a>
+                </nav>
+            </div>
+           
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 col-xl-9">
+                        <header>
+                            <h2>Transaction list</h2>
+                            <hr>
+                        </header>
+                        <div class="btn-toolbar">
+                            <form class="input-group flex-grow-1">
+                                <input class="form-control"  type="text" placeholder="Search by keywords" aria-label="Search">
+                            </form>
+                        </div>
+                        <div class="position-relative overflow-hidden border-bottom small mb-3">
+                            <nav class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                                <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                                <a class="nav-link text-nowrap" href="#">Date<i class="fas fa-sort-amount-up ml-1"></i></a>
+                                <a class="nav-link text-nowrap" href="#">Cost</a>
+                            </nav>
+                        </div>
+                        <div class="myTransactionList">
+                            
+                            <div id="transaction98489093" class="card border-0 shadow-sm mb-3">
+                                <div class="card-body py-3">
+                                    <div class="small text-muted py-1">
+                                        <span class="px-2"><i class="fas fa-calendar-day mr-2"></i>5 July 2019</span>
+                                        <span class="px-2"><i class="fas fa-clock mr-2"></i>17:33</span>
+                                    </div>
+                                    <table class="table table-sm mb-0">
+                                        <tr>
+                                            <td><i class="fas fa-plus-circle text-success"></i></td>
+                                            <td class="w-100"><a data-toggle="collapse" href="#transactionDetails98489093" role="button" aria-expanded="false" aria-controls="transactionDetails98489093">Пожертвование</a></td>
+                                            <td class="text-right"><sman class="text-success">$36.50</span></td>
+                                        </tr>
+                                    </table>
+                                    <div id="transactionDetails98489093" class="collapse mt-2">
+                                        Подробности транзакции... Например: кто пожертвовал, вид оплаты, ну что там еще бывает...
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="transaction23489093" class="card border-0 shadow-sm mb-3">
+                                <div class="card-body py-3">
+                                    <div class="small text-muted py-1">
+                                        <span class="px-2"><i class="fas fa-calendar-day mr-2"></i>22 July 2018</span>
+                                        <span class="px-2"><i class="fas fa-clock mr-2"></i>10:12</span>
+                                    </div>
+                                    <table class="table table-sm mb-0">
+                                        <tr>
+                                            <td><i class="fas fa-plus-circle text-success"></i></td>
+                                            <td class="w-100"><a data-toggle="collapse" href="#transactionDetails23489093" role="button" aria-expanded="false" aria-controls="transactionDetails23489093">Продажа книги "Book title"</a></td>
+                                            <td class="text-right"><sman class="text-success">$12.00</span></td>
+                                        </tr>
+                                    </table>
+                                    <div id="transactionDetails23489093" class="collapse mt-2">
+                                        Подробности транзакции... Например: кто покупатель, вид оплаты, ну что там еще бывает...
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="transaction26489093" class="card border-0 shadow-sm mb-3">
+                                <div class="card-body py-3">
+                                    <div class="small text-muted py-1">
+                                        <span class="px-2"><i class="fas fa-calendar-day mr-2"></i>01 July 2018</span>
+                                        <span class="px-2"><i class="fas fa-clock mr-2"></i>01:22</span>
+                                    </div>
+                                    <table class="table table-sm mb-0">
+                                        <tr>
+                                            <td><i class="fas fa-minus-circle text-danger"></i></td>
+                                            <td class="w-100"><a data-toggle="collapse" href="#transactionDetails26489093" role="button" aria-expanded="false" aria-controls="transactionDetails26489093">Покупка книги "Book title"</a></td>
+                                            <td class="text-right"><sman class="text-danger">$51.99</span></td>
+                                        </tr>
+                                    </table>
+                                    <div id="transactionDetails26489093" class="collapse mt-2">
+                                        Подробности транзакции... Например: кто покупатель, вид оплаты, ну что там еще бывает...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-3">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+    </body>
+</html>

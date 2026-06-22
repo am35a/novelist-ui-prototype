@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+    </head>
+    <body>
+        <header id="collapseHeaderMenu">
+            <div class="p-2 bg-dark text-light d-flex flex-nowrap align-items-center">
+                <a href="#" title="Novelist - share your impressions">
+                    <img class="d-sm-none" src="images/logo/logo.svg" height="40" alt="Novelist">
+                    <img class="d-none d-sm-block " src="images/logo/logoname.svg" height="40" alt="Novelist">
+                </a>
+                <div class="ml-auto d-flex align-items-center">
+                    <button id="headingSearch" class="btn btn-sm text-light mx-2" data-toggle="collapse" data-target="#collapseSearch" type="button"><i class="fas fa-search fa-lg"></i></button>
+                    <div class="d-inline-block mx-2">
+                        <input id="userHeaderDropMenu" type="button" class="btn text-light p-0 rounded-circle shadow-sm" style="width: 40px; height: 40px; background:url(images/users/0/preview.svg) no-repeat center / 40px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu dropdown-menu-right border-0 shadow-sm py-0 overflow-hidden" aria-labelledby="userHeaderDropMenu" style="min-width: 320px;">
+                            <a class="btn btn-light btn-block border-0 rounded-0 m-0 p-0 text-decoration-none" href="profile.html">
+                                <table class="table table-borderless m-0 text-primary">
+                                    <tr>
+                                        <td class="pr-0 pl-3 px-0 text-left"><i class="fas fa-id-card"></i></td>
+                                        <td class="pl-2 pr-3 px-0 text-right text-wrap">User name</td>
+                                    </tr>
+                                </table>
+                            </a>
+                            <hr class="my-0">
+                            <a class="btn btn-outline-secondary btn-block border-0 rounded-0 text-left text-nowrap m-0 px-3 py-3" href="wallet.html"><i class="fas fa-wallet mr-2"></i>Wallet <span class="float-right">$201.00</span></a>
+                            <div class="d-flex flex-wrap">
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-3 col-4" href="my-library.html">
+                                    <i class="fas fa-book-reader fa-2x"></i>
+                                    <div class="small">Library</div>
+                                </a>
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-3 col-4" href="my-reviews.html">
+                                    <i class="fas fa-glasses fa-2x"></i>
+                                    <div class="small">Reviews</div>
+                                </a>
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-3 col-4" href="my-books.html">
+                                    <i class="fas fa-pen-alt fa-2x"></i>
+                                    <div class="small">Workroom</div>
+                                </a>
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-3 col-4" href="#">
+                                    <i class="fas fa-comments fa-2x"></i>
+                                    <div class="small">Comments</div>
+                                </a>
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-3 col-4" href="#">
+                                    <i class="fas fa-chart-area fa-2x"></i>
+                                    <div class="small">Stats</div>
+                                </a>
+                            </div>
+                            <hr class="my-0">
+                            <div class="d-flex flex-wrap">
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-2 col-3" href="#">
+                                    <i class="fas fa-inbox fa-lg"></i>
+                                    <div class="small text-truncate">Inbox</div>
+                                </a>
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-2 col-3" href="account.html">
+                                    <i class="fas fa-user-cog fa-lg"></i>
+                                    <div class="small">Account</div>
+                                </a>
+                                <a class="btn btn-outline-secondary border-0 rounded-0 m-0 p-2 col-3" href="#">
+                                    <i class="fas fa-question-circle fa-lg"></i>
+                                    <div class="small text-truncate">Get help</div>
+                                </a>
+                            </div>
+                            <hr class="my-0">
+                            <button class="btn btn-light btn-block border-0 rounded-0 text-right px-3 py-2" type="button">Sign out<i class="fas fa-sign-out-alt ml-2"></i></button>
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-sm mx-2">
+                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#modalSignIn"><i class="fas fa-sign-in-alt mr-md-2"></i><span class="d-none d-md-inline">Sign in</span></button>
+                        <button class="btn btn-sm btn-success" type="button" data-toggle="modal" data-target="#modalSignUp"><i class="fas fa-user-plus mr-md-2"></i><span class="d-none d-md-inline">Sign up</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-scroller position-absolute w-100 bg-light shadow-sm">
+                <div id="collapseSearch" class="collapse py-3 py-sm-5 px-0 px-sm-3" aria-labelledby="headingSearch" data-parent="#collapseHeaderMenu">
+                    <div class="container">
+                        <div class="mx-auto">
+                            <div class="position-relative" data-action="clearable">
+                                <input id="globalSearch" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                            </div>
+                            <div class="row">
+                                <div class="col mt-3">
+                                    <span class="text-muted"><i class="fas fa-pen-nib mx-2"></i></span>Content</span>
+                                    <hr class="mt-2 mb-0">
+                                    <a class="d-inline-block text-decoration-none text-nowrap p-2" href="books.html">Books <span class="badge badge-pill bg-secondary text-light">4201</span></a>
+                                    <a class="d-inline-block text-decoration-none text-nowrap p-2" href="reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">137</span></a>
+                                </div>
+                                <div class="col mt-3">
+                                    <span class="text-muted"><i class="fas fa-users mx-2"></i>Community</span>
+                                    <hr class="mt-2 mb-0">
+                                    <a class="d-inline-block text-decoration-none text-nowrap p-2" href="writers.html">Writers <span class="badge badge-pill bg-secondary text-light">201</span></a>
+                                    <a class="d-inline-block text-decoration-none text-nowrap p-2" href="#">Reviewers <span class="badge badge-pill bg-secondary text-light">731</span></a>
+<!--                                    <a class="d-inline-block text-decoration-none text-nowrap p-2" href="#">Readers <span class="badge badge-pill bg-secondary text-light">1186</span></a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="min-vh-100">
+        
+<!--            Here the content...-->
+       
+        </main>
+        
+        <footer class="bg-dark text-light mt-md-5 pt-4 pb-3 pt-md-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mt-4-">
+                        <h2 class="h5">Languages</h2>
+                        <a class="text-white mr-4" href="#"><i class="fas fa-flag mr-2"></i>English</a>
+                        <a class="text-muted mr-4" href="#">Español</a>
+                        <a class="text-muted mr-4" href="#">Português</a>
+                        <a class="text-muted mr-4" href="#">Français</a>
+                        <a class="text-muted mr-4" href="#">Deutsch</a>
+                        <hr class="my-3">
+                    </div>
+                    <div class="col-6 col-md mb-4 mb-md-0">
+                        <h2 class="h5">Content</h2>
+                        <table>
+                            <tr>
+                                <td class="p-0"><a class="text-muted" href="books.html">Books</a></td>
+                                <td class="px-2 small align-middle text-right">4201</td>
+                            </tr>
+                            <tr>
+                                <td class="p-0"><a class="text-muted" href="reviews.html">Reviews</a></td>
+                                <td class="px-2 small align-middle text-right">137</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-6 col-md mb-4 mb-md-0">
+                        <h2 class="h5">Community</h2>
+                        <table>
+                            <tr>
+                                <td class="p-0"><a class="text-muted" href="writers.html">Writers</a></td>
+                                <td class="px-2 small align-middle text-right">201</td>
+                            </tr>
+                            <tr>
+                                <td class="p-0"><a class="text-muted" href="#">Reviewers</a></td>
+                                <td class="px-2 small align-middle text-right">731</td>
+                            </tr>
+                            <!--tr>
+                                <td class="p-0"><a class="text-muted" href="#">Читатели</a></td>
+                                <td class="px-2 small align-middle text-right">3186</td>
+                            </tr-->
+                        </table>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h2 class="h5">Support</h2>
+                        <ul class="list-unstyled">
+                            <li><a class="text-muted" href="#">Help center</a></li>
+                            <li><a class="text-muted" href="agreements-policies.html">Agreements & Policies</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h2 class="h5">About</h2>
+                        <ul class="list-unstyled">
+                            <li><a class="text-muted" href="#">Team</a></li>
+                            <!--li><a class="text-muted" href="#">Location</a></li-->
+                            <li><a class="text-muted" href="#">Sitemap</a></li>
+                            Вакансии
+                        </ul>
+                    </div>
+                    <div class="col-12 text-center">
+                        <span class="badge badge-danger">Attention!</span> <small>The site may contain materials not intended for viewing by persons under the age of adulthood!</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center small">
+                        <hr class="bg-secondary my-3">
+                        <div class="row flex-md-row-reverse">
+                            <div class="col-12 col-md-7 mb-3 my-md-auto text-md-right">
+                                <h3 class="h6 d-inline-block mx-2 mb-0 align-middle">Follow us:</h3>
+                                <div class="btn-group text-nowrap">
+                                    <a class="btn btn-sm btn-outline-light" href="#"><i class="fab fa-facebook"></i><span class="ml-2 ">facebook</span></a>
+                                    <a class="btn btn-sm btn-outline-light" href="#"><i class="fab fa-instagram"></i><span class="ml-2 ">instagram</span></a>
+                                    <a class="btn btn-sm btn-outline-light" href="#"><i class="fab fa-twitter"></i><span class="ml-2 ">twitter</span></a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-5 text-cente-r text-md-left">
+                                <a class="d-inline-flex flex-nowrap text-decoration-none" href="#">
+                                    <img src="images/logo/logo.svg" height="40px" alt="Novelist">
+                                    <span class="text-light text-left h6 m-0 ml-1"><small>&copy; 2020 - ...</small><br><b>noveli.st</b></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>

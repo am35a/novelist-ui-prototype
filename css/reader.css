@@ -1,0 +1,49 @@
+/* Закладки в тексте */
+#bookContent p {
+    position: relative;
+    margin-top: -1px;
+    border-top-width: 1px;
+    border-top-style: dotted;
+    border-top-color: transparent;
+}
+#bookContent p:hover {
+    border-top-color: rgba(0, 0, 0, .25);
+}
+#bookContent p:hover::after,
+#bookContent p.bookmarked::after {
+    position: absolute;
+    content: "\f02e";
+    top: 0;
+    left: 100%;
+    padding-bottom: .5rem;
+    padding-right: .5rem;
+    color: rgba(0, 0, 0, .25);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-size: 1rem;
+}
+#bookContent p.bookmarked {
+    border-top-width: 1px;
+    border-top-style: dotted;
+    border-top-color: transparent;
+    border-top-color: rgba(0, 0, 0, .25);
+}
+#bookContent p.bookmarked::after {
+    font-weight: 900;
+}
+main.text-white #bookContent p:hover,
+main.text-white #bookContent p.bookmarked {
+    border-top-color: rgba(255, 255, 255, .25);
+}
+main.text-white #bookContent p:hover::after,
+main.text-white #bookContent p.bookmarked::after {
+    color: rgba(255, 255, 255, .25);
+}
+.btn-group-select {
+    top: 50vh;
+    transform: translateY(-50%);
+}
+.reader-collapse {
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+}

@@ -1,0 +1,107 @@
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ *
+ * 	Novelist theme - Owl Carousel CSS File
+ **/
+.owl-carousel:not(.owl-loaded) {
+    display: flex;
+    display: -webkit-flex;
+    overflow: hidden;
+}
+
+/* Уcтанавливаем ограничения по размеру для карт */
+.owl-carousel:not(.owl-loaded) .card {
+    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    margin-right: 30px;
+}
+@media screen and (min-width:576px) {
+    .owl-carousel:not(.owl-loaded) .card {
+        flex-basis: calc(100% / 2 - 30px / 2);
+        -webkit-flex-basis: calc(100% / 2 - 30px / 2);
+    }
+}
+@media screen and (min-width:992px) {
+    .owl-carousel:not(.owl-loaded) .card {
+        flex-basis: calc(100% / 3 - 30px / 3 * 2);
+        -webkit-flex-basis: calc(100% / 3 - 30px / 3 * 2);
+    }
+}
+@media screen and (min-width:1200px) {
+    .owl-carousel:not(.owl-loaded) .card {
+        flex-basis: calc(100% / 4 - 30px / 4 * 3);
+        -webkit-flex-basis: calc(100% / 4 - 30px / 4 * 3);
+    }
+}
+
+.owl-theme .owl-nav {
+    position: absolute;
+    top: calc(50% - 1.5rem / 2);
+    height: 0;
+}
+
+.owl-theme .owl-nav button.owl-prev,
+.owl-theme .owl-nav button.owl-next {
+    color: #007bff;
+    background: #e7e9eb;
+    display: inline-flex;
+    cursor: pointer;
+    border: calc(1rem / 4) solid transparent;
+    border-radius: 50%;
+    outline: none;
+}
+
+.owl-theme .owl-nav button.owl-prev {
+    transform: translate(-50%, -50%);
+    float: left;
+}
+
+.owl-theme .owl-nav button.owl-next {
+    transform: translate(50%, -50%);
+    float: right;
+}
+
+.owl-theme .owl-nav :not(.disabled)[class*='owl-']:hover {
+    color: #0056b3;
+    text-decoration: none;
+    -webkit-text-decoration: none;
+}
+
+.owl-theme .owl-nav .disabled > * {
+    opacity: 0.65;
+}
+
+.owl-theme .owl-dots {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    bottom: 0;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    outline: none;
+    zoom: 1;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: .7rem;
+    height: .7rem;
+    margin: calc(.8rem / 2) .5rem;
+    background: #D6D6D6;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity 200ms ease;
+    border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #007bff;
+}

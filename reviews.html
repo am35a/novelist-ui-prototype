@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+        
+        <!-- Multiply input -->
+        <link href="css/select2.css" rel="stylesheet">
+        <script src="js/select2.full.min.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+
+            <div class="container my-5">
+                <h1 class="mb-0">Reviews</h1>
+                <hr>
+                <div class="row">
+                    <div id="listBlock" class="col-12 col-lg-8 col-xl-9">
+                        <div class="btn-toolbar">
+                            <div class="position-relative flex-grow-1" data-action="clearable">
+                                <input id="inputInReviewsSearch" class="form-control" type="search" placeholder="Search by keywords, author, citation or ect." aria-label="Search">
+                                <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                            </div>
+                            <div class="btn-group ml-2 d-lg-none" role="group" aria-label="Open filters panel">
+                                <button type="button" class="toggleBlocks btn btn-primary"><i class="fas fa-filter"></i><span class="ml-2 d-none d-sm-inline-flex">Filters</span></button>
+                            </div>
+                        </div>
+                        <div class="position-relative overflow-hidden border-bottom small mb-3">
+                            <div class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                                <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                                <a class="nav-link text-nowrap" href="#">Date<i class="fas fa-sort-amount-up ml-1"></i></a>
+                                <a class="nav-link text-nowrap" href="#">Popular</a>
+                                <a class="nav-link text-nowrap" href="#">Rating</a>
+                                <a class="nav-link text-nowrap" href="#">Comments</a>
+                            </div>
+                        </div>
+                        
+                        <div id="reviewsSearchList" class="card-list">
+                            
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-body h5 mb-0 text-truncate" title="The title of the review">The title of the review</div>
+                                <div class="d-flex flex-column flex-md-row align-items-start">
+                                    <div class="card-img-center position-relative w-tmp"
+                                        data-type="gallery" data-image="images/books/1/cover.jpg"
+                                        style="background: url(images/books/1/preview.jpg) no-repeat scroll center center / cover;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                            <title>Название книги</title>
+                                        </svg>
+                                    </div>
+                                    <div class="card-body py-md-0">
+                                        <div class="small mb-2 text-muted">
+                                            <span class="mb-2 pr-3">
+                                                <span class="position-absolute"><i class="fas fa-book"></i></span>
+                                                <span class="ml-1 pl-3">
+                                                    <a class="px-1 bg-primary rounded text-white text-decoration-none" href="book.html">The title of the book</a>
+                                                </span>
+                                            </span>
+                                            <span class="mb-2">
+                                                <span class="position-absolute"><i class="fas fa-pen-alt"></i></span>
+                                                <span class="ml-1 pl-3">
+                                                    <a class="px-1 bg-primary rounded text-white text-decoration-none" href="profile.html">Author Name</a>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="small mb-2 text-muted">
+                                            <span class="mb-2 pr-3 text-warning" data-toggle="tooltip" data-placement="top" title="Book opinion">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </span>
+                                            <span class="mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviewed: 22 October 2019">
+                                                <span class="position-absolute"><i class="fas fa-edit"></i></span>
+                                                <time class="ml-1 pl-3" datetime="2019-10-22T10:03">2 days ago</time>
+                                            </span>
+                                            <span class="mb-2" data-toggle="tooltip" data-placement="top" title="Comments">
+                                                <span class="position-absolute"><i class="fas fa-comments"></i></span>
+                                                <span class="ml-1 pl-3">85</span>
+                                            </span>
+                                        </div>
+                                        <!-- Часть описания ниже не должна быть длинее 256 символов. Как укорачивать не ясно. -->
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio delectus ratione aliquam dolor est accusantium sint quia pariatur qui hic id minima, similique odit iste doloremque voluptatum quaerat dolore deleniti! Tenetur molestiae repellendus, atque etiu
+                                        ...
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a class="btn btn-block btn-primary" href="book-review.html">Read review</a>
+                                </div>
+                            </div>
+                            
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-body h5 mb-0 text-truncate" title="The title of the review">The title of the review</div>
+                                <div class="d-flex flex-column flex-md-row align-items-start">
+                                    <div class="card-img-center position-relative w-tmp"
+                                        data-type="gallery" data-image="images/books/3/cover.jpg"
+                                        style="background: url(images/books/3/preview.jpg) no-repeat scroll center center / cover;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                            <title>Название книги</title>
+                                        </svg>
+                                    </div>
+                                    <div class="card-body py-md-0">
+                                        <div class="small mb-2 text-muted">
+                                            <span class="mb-2 pr-3">
+                                                <span class="position-absolute"><i class="fas fa-book"></i></span>
+                                                <span class="ml-1 pl-3">
+                                                    <a class="px-1 bg-primary rounded text-white text-decoration-none" href="book.html">The title of the book</a>
+                                                </span>
+                                            </span>
+                                            <span class="mb-2">
+                                                <span class="position-absolute"><i class="fas fa-pen-alt"></i></span>
+                                                <span class="ml-1 pl-3">
+                                                    <a class="px-1 bg-primary rounded text-white text-decoration-none" href="profile.html">Author Name</a>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="small mb-2 text-muted">
+                                            <span class="mb-2 pr-3 text-success" data-toggle="tooltip" data-placement="top" title="Book opinion">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviewed: 22 October 2019">
+                                                <span class="position-absolute"><i class="fas fa-edit"></i></span>
+                                                <time class="ml-1 pl-3" datetime="2019-10-22T10:03">2 days ago</time>
+                                            </span>
+                                            <span class="mb-2" data-toggle="tooltip" data-placement="top" title="Comments">
+                                                <span class="position-absolute"><i class="fas fa-comments"></i></span>
+                                                <span class="ml-1 pl-3">85</span>
+                                            </span>
+                                        </div>
+                                        <!-- Часть описания ниже не должна быть длинее 256 символов. Как укорачивать не ясно. -->
+                                        Magnam libero nulla, doloremque sit sequi. Cumque at ducimus doloremque sit eius minima nisi quis iste! Odit sunt voluptates suscipit similique eveniet numquam, necessitatibus non error sapiente eligendi, ab cum
+                                        ...
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a class="btn btn-block btn-primary" href="book-review.html">Read review</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <button id="buttonReviewsLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more reviews...</button>
+                    </div>
+                    <div id="asideBlock" class="col-12 col-lg-4 col-xl-3 d-none d-lg-block" role="region" aria-label="Filters for reviews search">
+                        <span class="h3">Filters</span>
+                        <hr>
+                        <form class="form" autocomplete="off">
+                            <div class="mb-3">
+                                <div class="form-group">
+                                    <label for="exampleInputGenre">By book genre</label>
+                                    <select id="exampleInputGenre" class="js-genre form-control" multiple="multiple">
+                                        <optgroup label="Фантастика">
+                                            <option>Дизель панк</option>
+                                            <option>Ретропия</option>
+                                            <option>Антиутопия</option>
+                                        </optgroup>
+                                        <optgroup label="Любовные романы">
+                                            <option>Мелодраммы</option>
+                                            <option>Не мелораммы</option>
+                                        </optgroup>                                    
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="filtersInputTag">By review tags</label>
+                                    <select id="filtersInputTag" class="js-tag form-control" multiple="multiple" aria-describedby="filtersTags"></select>
+                                    <small id="filtersTags" class="form-text text-muted">Select or type a tag and hit enter.</small>
+                                </div>
+                            </div>
+                            <!--div class="mb-3">
+                                <div class="mb-1">By status</div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckCompletedBook" checked>
+                                    <label class="custom-control-label" for="customCheckCompletedBook">Completed books</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2" checked>
+                                    <label class="custom-control-label" for="customCheck2">Still Underway</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="mb-1">By contain</div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    <label class="custom-control-label" for="customCheck3">eBook available</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                    <label class="custom-control-label" for="customCheck4">With illustrations</label>
+                                </div>
+                            </div-->
+                            <div class="mb-3">
+                                <div class="mb-1">By rating interval</div>
+                                <div class="d-flex">
+                                    <table>
+                                        <tr>
+                                            <td class="pb-2 pr-1 text-right">from:</td>
+                                            <td class="pb-2"><span id="reviewListRatingFrom" class='starrr text-nowrap'></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pb-2 pr-1 text-right">to:</td>
+                                            <td class="pb-2"><span id="reviewListRatingTo" class='starrr text-nowrap'></span></td>
+                                        </tr>
+                                    </table>
+                                    <button id="resetReviewListRating" class="btn btn-link flex-grow-1 ml-2 mb-2" type="button"><i class="fas fa-undo-alt fa-x2"></i></button>
+                                </div>
+                                <script>
+                                    $('#reviewListRatingFrom').starrr({
+                                        rating: 1,
+                                        emptyClass: 'far fa-star fa-lg',
+                                        fullClass: 'fas fa-star fa-lg',
+                                        change: function(e, value){
+                                            if( $('#reviewListRatingTo').attr('data-starrr') < value )
+                                                $("#reviewListRatingFrom").starrr('setRating', $('#reviewListRatingTo').attr('data-starrr'))    
+                                        }
+                                    })
+                                    $('#reviewListRatingTo').starrr({
+                                        rating: 5,
+                                        emptyClass: 'far fa-star fa-lg',
+                                        fullClass: 'fas fa-star fa-lg',
+                                        change: function(e, value){
+                                            if( $('#reviewListRatingFrom').attr('data-starrr') > value )
+                                                $("#reviewListRatingTo").starrr('setRating', $('#reviewListRatingFrom').attr('data-starrr'))    
+                                        }
+                                    })
+                                    $('#resetReviewListRating').on('click', function(){
+                                        if( $('#reviewListRatingFrom').attr('data-starrr') != 1 )
+                                            $("#reviewListRatingFrom").starrr('setRating', 1)
+                                        if( $('#reviewListRatingTo').attr('data-starrr') != 5 )
+                                            $("#reviewListRatingTo").starrr('setRating', 5)
+                                    })
+                                </script>
+                            </div>
+                            
+                            <hr class="d-lg-none">
+                                                                                    
+                            <button class="toggleBlocks btn btn-block btn-primary d-lg-none" type="button"><i class="fas fa-sync-alt mr-2"></i>Apply</button>
+                        </form>
+
+                        <script type="text/javascript">
+                            // https://select2.org/configuration/options-api
+                            $(".js-genre").select2({
+                                width: "100%",
+                                placeholder: "Select a genre"
+                            });
+                            $(".js-tag").select2({
+                                width: "100%",
+                                placeholder: "Select or type a tag",
+                                tags: true,
+                                tags: ['по умолчанию', 'здесь', 'самые', 'популярные', '10 тегов']
+                            });
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

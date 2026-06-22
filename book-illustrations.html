@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_book-page-info.htm"-->
+
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-white shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="book.html" title="Name of the book"><i class="fas fa-book"></i></a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap" href="book-mentions.html">Mentions <span class="badge badge-pill bg-secondary text-light">27</span></a>
+                    <a class="nav-link text-nowrap disabled" href="book-illustrations.html">Illustrations <span class="badge badge-pill bg-secondary text-light">9</span></a>
+                    <a class="nav-link text-nowrap" href="book-quotations.html">Quotations <span class="badge badge-pill bg-secondary text-light">18</span></a>
+                    <a class="nav-link text-nowrap" href="book-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">3</span></a>
+                    <a class="nav-link text-nowrap" href="book-guestbook.html">Guestbook <span class="badge badge-pill bg-secondary text-light">843</span></a>
+                    <a class="nav-link text-nowrap" href="book-bookmarks.html">In bookmarks <span class="badge badge-pill bg-secondary text-light">3</span></a>
+                    <a class="nav-link text-nowrap" href="book-activity.html">Activity</a>
+                    <a class="nav-link text-nowrap" href="book-statistic.html">Statistic</a>
+                </nav>
+            </div>
+            
+            <section class="container">
+                <header class="mb-3">
+                    <h2>Illustrations</h2>
+                </header>               
+               
+                <div class="btn-toolbar">
+                    <div class="position-relative flex-grow-1" data-action="clearable">
+                        <input id="inputInIllustrationsSearch" class="form-control" type="search" placeholder="Search by keywords, author, citation or ect." aria-label="Search">
+                        <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden border-bottom small mb-3">
+                    <div class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                        <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                        <a class="nav-link text-nowrap" href="#">Author's<i class="fas fa-sort-amount-up ml-1"></i></a>
+                        <a class="nav-link text-nowrap" href="#">Fanish</a>
+                        <a class="nav-link text-nowrap" href="#">All</a>
+                    </div>
+                </div>
+                <div id="bookIllustrationsList" class="card-columns">
+                   
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="http://starkovtattoo.spb.ru/images/200/DSC100215454.jpg">
+                                <img src="http://starkovtattoo.spb.ru/images/200/DSC100215454.jpg" class="img-fluid" alt="...">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="https://cdn.pixabay.com/photo/2017/10/29/11/11/fantasy-2899453_960_720.jpg">
+                                <img src="https://cdn.pixabay.com/photo/2017/10/29/11/11/fantasy-2899453_960_720.jpg" class="img-fluid" alt="">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="https://images.alphacoders.com/609/609092.jpg">
+                                <img src="https://images.alphacoders.com/609/609092.jpg" class="img-fluid" alt="...">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="https://i.pinimg.com/originals/c2/2d/c1/c22dc198f656c48799ee6f09e9e8f924.jpg">
+                                <img src="https://i.pinimg.com/originals/c2/2d/c1/c22dc198f656c48799ee6f09e9e8f924.jpg" class="img-fluid" alt="">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="https://wallup.net/wp-content/uploads/2018/10/04/680141-alien-sci-fi-art-artwork-futuristic-aliens.jpg">
+                                <img src="https://wallup.net/wp-content/uploads/2018/10/04/680141-alien-sci-fi-art-artwork-futuristic-aliens.jpg" class="img-fluid" alt="">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="https://cdn.vox-cdn.com/thumbor/4E9BXmSfS0axVGiHAT_a_UdRjhY=/0x182:794x741/1200x800/filters:focal(334x550:460x676)/cdn.vox-cdn.com/uploads/chorus_image/image/52476385/USoJapan_144dpi.0.jpeg">
+                                <img src="https://cdn.vox-cdn.com/thumbor/4E9BXmSfS0axVGiHAT_a_UdRjhY=/0x182:794x741/1200x800/filters:focal(334x550:460x676)/cdn.vox-cdn.com/uploads/chorus_image/image/52476385/USoJapan_144dpi.0.jpeg" class="img-fluid" alt="">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <figure class="img-fluid card-body p-0 m-0">
+                            <div class="position-relative" data-type="gallery" data-image="https://i.pinimg.com/originals/56/77/29/567729627345bec6b100e08d5cd09284.jpg">
+                                <img src="https://i.pinimg.com/originals/56/77/29/567729627345bec6b100e08d5cd09284.jpg" class="img-fluid" alt="">
+                            </div>
+                            <figcaption class="figure-caption p-2">
+                                A caption for the above image.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                </div>
+                
+                <footer>
+                    <button id="buttonIllustrationsLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more illustrations...</button>
+                </footer>
+            </section>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

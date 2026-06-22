@@ -1,0 +1,38 @@
+.media-player {
+    z-index: 1999;
+}
+
+.player-bg {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    filter:blur(25px);
+    transform: scale(1.2);
+    z-index: -1;
+}
+
+.player-custom-range {
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+#plyerPlayCheck:checked ~ * .fa-play {display: none;}
+#plyerPlayCheck:not(:checked) ~ * .fa-pause {display: none;}
+
+.d-fade-in {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility .5s linear, opacity .5s linear;
+}
+.d-fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition:  visibility .5s linear, opacity .5s linear;
+}
+
+.dropdown-menu-center {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 100% !important;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header.htm"-->
+        <main class="min-vh-100">
+            <div class="container my-5">
+                <header>
+                    <h1>My Cycles</h1>
+                    <hr>
+                </header>
+                <div class="position-relative" data-action="clearable">
+                    <input id="inputInCyclesSearch" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                </div>
+                <div class="position-relative overflow-hidden border-bottom small mb-3">
+                    <nav class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                        <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                        <a class="nav-link text-nowrap" href="#">Date<i class="fas fa-sort-amount-up ml-1"></i></a>
+                        <a class="nav-link text-nowrap" href="#">Popular</a>
+                        <a class="nav-link text-nowrap" href="#">Rating</a>
+                        <a class="nav-link text-nowrap" href="#">Comments</a>
+                    </nav>
+                </div>
+                <div class="row justify-content-center">
+                    <p class="col-sm-8 col-md-6">
+                        <button id="buttonCreateNewCycle" class="btn btn-success btn-block" type="button"><i class="fas fa-plus mr-2"></i>Create new cycle</button>
+                    </p>
+                </div>
+                <div id="myCyclesList">
+                    <div id="cycleId" class="card border-0 mb-3 shadow-sm">
+                        <div class="card-header">
+                           <h2 class="h5 text-ellipsis mb-0">The title of the Cycle</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-5 col-lg-4 col-xl-3 pr-md-0">
+                                <div class="card-img-center position-relative"
+                                     data-type="gallery" data-image="images/cycles/0/cover.svg"
+                                     style="background: url(images/cycles/0/preview.svg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название цикла</title></svg>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-7 col-lg-8 col-xl-9 py-3 d-flex flex-column">
+                                <div class="row px-3 px-md-0 text-muted">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Published:</b>
+                                                    <time class="col-6 pl-0" datetime="2018-07-22">22 July 2018</time>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Last edited:</b>
+                                                    <time class="col-6 pl-0" datetime="2019-10-22">22 October 2019</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-book"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Total book:</b>
+                                                    <div class="col-6 pl-0">3</div>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Completed:</b>
+                                                    <div class="col-6 pl-0">2</div>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Still underway:</b>
+                                                    <div class="col-6 pl-0">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Chapters:</b>
+                                                    <div class="col-6 pl-0">10</div>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Pages:</b>
+                                                    <div class="col-6 pl-0">85</div>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Symbols:</b>
+                                                    <div class="col-6 pl-0">75640</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-piggy-bank"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Earned gross:</b>
+                                                    <div class="col-6 pl-0">$1265</div>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-6 pr-0">Earned net:</b>
+                                                    <div class="col-6 pl-0">$325</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">Books in the cycle:</h3>
+                            <table class="table table-hover small mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0">#</th>
+                                        <th class="border-top-0">Book title</th>
+                                        <th class="border-top-0">Published</th>
+                                        <th class="border-top-0 text-right">Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>3</th>
+                                        <td><a href="book.html" title="название книги">Larry the Bird</a></td>
+                                        <td>1 January 2019</td>
+                                        <td><div class=" text-right text-success">Free!</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td><a href="book.html" title="название книги">Jacob</a></td>
+                                        <td>29 October 2018</td>
+                                        <td><div class="text-right text-success">Free!</div></td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td><a href="book.html" title="название книги">1984</a></td>
+                                        <td>22 October 2018</td>
+                                        <td><div class="text-right text-warning">$0.99</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>                                
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a class="btn btn-sm btn-primary" href="my-cycle.html"><i class="fas fa-edit"></i><span class="ml-2 d-none d-sm-inline-block">Edit</span></a>
+                            <a class="btn btn-sm btn-primary" href="my-cycle.html#nav-book-settings"><i class="fas fa-cog"></i><span class="ml-2 d-none d-sm-inline-block">Settings</span></a>
+                            <a class="btn btn-sm btn-primary" href="cycle.html" target="_blank"><i class="fas fa-eye"></i><span class="ml-2 d-none d-sm-inline-block">Preview</span></a>
+                            <a class="btn btn-sm btn-danger float-right" href="my-cycle.html#nav-book-delete"><i class="fas fa-trash"></i><span class="ml-2 d-none d-sm-inline-block">Delete</span></a>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>
+
+
+
+

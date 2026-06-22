@@ -1,0 +1,250 @@
+/* Hide horizontal negative overhang and redefine background */
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: rgba(20,40,60,0.1);
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+/*
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+*/
+
+/* Change cursor */
+[data-toggle="tooltip"].badge {
+    cursor: default;
+}
+
+.custom-control-input:not(:disabled) ~ .custom-control-label::before,
+.custom-control-input:not(:disabled) ~ .custom-control-label::after,
+.custom-file-input,
+.custom-file-label,
+[data-type="gallery"],
+#bookContent p::after,
+[role="button"] {
+    cursor: pointer;
+}
+
+/* Mouseover gallery for img/svg/... */
+[data-type="gallery"]:hover::after {
+    content: "\f00e";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: rgba(255, 255, 255, .35);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 4rem;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* !!! Hacks !!! */
+/* Cards header global hide */
+.cards-no-header .card .card-header {
+    display: none;
+}
+
+
+/* Set with for cards in list */
+.card .w-tmp {
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .card-list .w-tmp {
+        width: 220px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .card-list .card-status {
+        display: none;
+    }
+}
+
+/* Set max with for cards in deck */
+.card-deck .card {
+    min-width: 220px;
+}
+.card-deck .card-status {
+    display: none;
+}
+@media screen and (min-width:576px) {
+    .card-deck .card { max-width: calc(100% - 15px * 2); }
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+@media screen and (min-width:992px) {
+    .card-deck .card { max-width: calc(100% / 2 - 15px * 2); }
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+@media screen and (min-width:1200px) {
+    .card-deck .card { max-width: calc(100% / 3 - 15px * 2); }
+}
+
+/* Change tabs light colors */
+.nav-tabs .nav-link-light.active {
+    background-color: #f8f9fa;
+    border-bottom-color: #f8f9fa;
+}
+
+/* Move over all */
+.nav-scroller,
+.z-index-1 {
+    z-index: 1;
+}
+
+/* Set max with for dropdown menus */
+.dropdown-menu {
+    max-width: 320px;
+}
+
+/* Additional classes */
+.gallery {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 2000;
+}
+.gallery img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 96%;
+    height: 96%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+}
+
+/* Additional classes for Bootstrap */
+.btn.disabled,
+.btn:disabled {
+    pointer-events: none;
+}
+.border-transparent { border-color: transparent !important; }
+
+.bg-clip-padding { background-clip: padding-box; }
+.bg-clip-content { background-clip: content-box; }
+.bg-clip-border { background-clip: border-box; }
+
+.l-0 { left: 0; }
+.t-0 { top: 0; }
+.r-0 { right: 0; }
+.b-0 { bottom: 0; }
+
+.text-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-42 {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    min-height: 42px;
+}
+
+.btn-top-jumper {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    opacity: .70;
+    z-index: 1030;
+}
+.btn-top-jumper:hover {
+    opacity: 1;
+}
+
+.hyphens {
+    hyphens: auto;
+}
+
+/* For dropdown:hover menu */
+.dropdown-hover:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+.dropdown-hover > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}            
+
+/* Change del style */
+del {
+    display: inline-table;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+}
+del:before,
+del:after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    transform: rotate(35deg);
+    opacity: .7;
+}
+del:after {
+    transform: rotate(-35deg);
+}
+
+/* For Summernote editor */
+.note-editor.note-frame {
+    border-width: 0 !important;
+    border-radius: 0;
+}
+
+/* For guestbook comments */
+[id*="comment-"].replies:not(.expand) .comments-branch > div:nth-child(n+2),
+[id*="comment-"].replies.expand .comments-branch + .expand-comments-branch,
+[id*="comment-"]:not(.replies) .toggle-comments-branch,
+[id*="comment-"]:not(.replies) .comments-branch,
+[id*="comment-"]:not(.replies) .expand-comments-branch {
+    display: none;
+}
+
+/* Scroll-Y flexible box */
+.scroll-box {
+    position: relative;
+}
+.scroll-box.scroll-box-y {
+    max-height: 410px;
+    overflow-y: auto;
+}
+.scroll-box .scroll-box-header {
+    position: sticky;
+    z-index: 1;
+}
+.scroll-box .scroll-box-body {
+    
+}

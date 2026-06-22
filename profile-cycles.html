@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_profile-user-info.htm"-->
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-light shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="profile.html"><i class="fas fa-id-card mr-2"></i>Profile</a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap" href="profile-books.html">Books <span class="badge badge-pill bg-secondary text-light">7</span></a><!-- мои книги -->
+                    <a class="nav-link text-nowrap disabled" href="profile-cycles.html">Cycles <span class="badge badge-pill bg-secondary text-light">2</span></a><!-- мои циклы -->
+                    <a class="nav-link text-nowrap" href="profile-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">189&#8226;16</span></a><!-- мои подписчики * я подписан -->
+                    <a class="nav-link text-nowrap" href="profile-library.html">Library <span class="badge badge-pill bg-secondary text-light">2&#8226;3&#8226;3</span></a><!-- я читаю * я прочел * в закладках -->
+                    <a class="nav-link text-nowrap" href="profile-follows.html">Follows <span class="badge badge-pill bg-secondary text-light">127&#8226;6</span></a><!-- я слежу * за мной следят -->
+                </nav>
+            </div>
+            
+            <section class="container">
+                <header class="mb-3">
+                    <h2>Cycles</h2>
+                </header>
+                
+                <div id="profileCycles" class="card-list cards-no-header">
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="book.html" class="card-body text-decoration-none" data-toggle="tooltip" data-placement="top" title="The title of the cycle">
+                            <span class="h5 mb-0 text-ellipsis">The title of the cycle</span>
+                        </a>
+                        <div class="d-flex align-items-start">
+                            <div class="card-img-center position-relative w-tmp"
+                                data-type="gallery" data-image="images/cycles/0/cover.svg"
+                                style="background: url(images/cycles/0/preview.svg) no-repeat scroll center center / cover;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" class="w-tmp">
+                                    <title>Название цикла</title>
+                                </svg>
+                            </div>
+                            <div class="card-status border-top border-light pt-3 px-3">
+                                <div class="text-muted">
+                                    <span id="cycle1Rating" class="starrr text-nowrap mb-2 pr-3"
+                                        data-toggle="tooltip" data-placement="top" title="Cycle rating">
+                                        <small id="ratingScore"></small>
+                                    </span>
+                                    <script>
+                                        $('#cycle1Rating').starrr({
+                                            rating: 4.2,
+                                            readOnly: true,
+                                            change: function(e, value){
+//                                                $(this).attr('data-starrr', value)
+                                            }
+                                        })
+                                    </script>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Published &bull; Last edited">
+                                        <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            <time class="text-nowrap" datetime="2018-07-22">22 July 2018</time>
+                                            &bull;
+                                            <a href="cycle-actives.html" class="text-decoration-none"><time class="text-nowrap" datetime="2019-10-22">22 October 2019</time></a>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Books &bull; Chapters &bull; Pages &bull; Symbols">
+                                        <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            3 &bull; 13 &bull; 95 &bull; 96940
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block small mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Comments">
+                                        <div class="position-absolute"><i class="fas fa-comments"></i></div>
+                                        <div class="ml-1 pl-3">
+                                            32
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora repudiandae voluptates molestiae repellat, minus, fuga error optio? Nesciunt velit aliquid, quam explicabo cum molestiae, quis deserunt labore commodi necessitatibus, distinctio!
+                                    Praesentium laudantium ea, repellat eum nihil ipsa quibusdam? Quod illo minus, assumenda quam quibusdam natus soluta earum sunt dignissimos accusamus! Reprehenderit harum, natus iste eligendi fugit ducimus voluptatum incidunt odio.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="reader.html">View cycle</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer>
+                    <button id="buttonMyCyclesLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more cycles...</button>
+                </footer>
+            </section>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

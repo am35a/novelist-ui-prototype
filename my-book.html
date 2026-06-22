@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+        
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+        
+        <!-- Multiply input -->
+        <link href="css/select2.css" rel="stylesheet">
+        <script src="js/select2.full.min.js"></script>
+        
+        <!-- Summernote WYSIWYG editor-->
+        <link href="css/summernote-bs4.css" rel="stylesheet">
+        <script src="js/summernote-bs4.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header.htm"-->
+        <main class="min-vh-100">
+            <div class="container my-5">
+                <header>
+                    <h1 class="my-3">The title of the book</h1>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link nav-link-light active" id="BookEditTab" data-toggle="tab" href="#BookEdit" role="tab" aria-controls="BookEdit" aria-selected="false">
+                            <i class="fas fa-edit mr-sm-2"></i><span class="d-none d-sm-inline">Edit book</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="MentionsEditTab" data-toggle="tab" href="#MentionsEdit" role="tab" aria-controls="MentionsEdit" aria-selected="false">
+                            <i class="fas fa-paperclip mr-sm-2"></i><span class="d-none d-sm-inline">Edit mentions</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="BookSettingsTab" data-toggle="tab" href="#BookSettings" role="tab" aria-controls="BookSettings" aria-selected="true">
+                            <i class="fas fa-cog mr-sm-2"></i><span class="d-none d-sm-inline">Book settings</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="BookDeleteTab" data-toggle="tab" href="#BookDelete" role="tab" aria-controls="BookDelete" aria-selected="true">
+                            <i class="fas fa-trash mr-sm-2"></i><span class="d-none d-sm-inline">Delete book</span>
+                        </a>
+                    </div>
+                </header>
+                <div id="nav-tabContent" class="tab-content bg-light p-3 border-left border-right border-bottom rounded-bottom shadow-sm">
+                    <section class="tab-pane fade show active" id="BookEdit" role="tabpanel" aria-labelledby="BookEditTab">
+                        <h2 class="d-sm-none">Edit book</h2>
+                        <div id="editGroupForms">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-8 col-md-6 mb-3">
+                                    <button class="btn btn-success btn-block" type="button"><i class="fas fa-plus mr-2"></i>Add chapter</button>
+                                </div>
+                            </div>
+                            <div class="alert alert-info border-0">
+                                <div class="alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                    <div class="h5 font-weight-bold"><i class="fas fa-info-circle mr-3"></i>Recomendation</div>
+                                </div>
+                                <hr class="my-2">
+                                <b>Не выкладывайте всю книгу сразу</b> - если вы никогда не публиковали книгу до этого!
+                                <b>Не выкладывайте всю книгу сразу</b> - несмотря на то что она полностью написана!
+                                <b>Не выкладывайте всю книгу сразу</b> - даже вы очень хотите поделиться ей!
+                                <b>Не выкладывайте всю книгу сразу</b> - особенно если она у вас платная!
+                                <br>
+                                Открывайте доступ к главам с временными промежутками, не больше одной главы в неделю. Тоже самое касается и переведенных книг на другие языки.
+                            </div>
+                            
+                            <div class="accordion" id="accordionMyBook">
+                                
+                                <div class="card">
+                                    <div id="headingChapter-2" class="card-header">
+                                        <h3 class="h6 d-inline-block mb-0 p-2">Chapter title #2</h3>
+                                        <div class="float-right">
+                                            <button class="btn btn-link text-primary collapsed" data-toggle="collapse" data-target=".collapse-2" aria-expanded="false" aria-controls="collapse-2" data-rel="tooltip" title="Edit chapter" type="button"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-link text-primary collapsed" data-toggle="collapse" data-target=".collapseSettings-2" aria-expanded="false" aria-controls="collapseSettings-2" data-rel="tooltip" title="Chapter settings" type="button"><i class="fas fa-cog"></i></button>
+                                            <button id="buttonDeleteChapter-2" class="btn btn-link text-danger ml-4" title="Delete the chapter" data-toggle="modal" data-target="#modalDeleteChapterConfirm" type="button"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="collapseSettings-2 collapse" aria-labelledby="headingChapter-2" data-parent="#accordionMyBook">
+                                        <div class="card-body">
+                                            <form class="form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputChapterTitile-2">The title of the chapter</label>
+                                                    <div class="col-lg-9">
+                                                        <input id="inputChapterTitile-2" class="form-control" type="text" value="Curent chapter title">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaAnnotation-2">Annotation</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea id="textareaAnnotation-2" class="form-control" rows="2" maxlength="128" aria-describedby="descriptionAnnotation-2"></textarea>
+                                                        <small id="descriptionAnnotation-2" class="form-text text-muted">Short about the chapter.</small>
+                                                    </div>
+                                                </div>
+                                                <div class="px-3 pt-3 mb-3 border rounded">
+                                                    <h4 class="h5">Publish settings</h4>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectVisibility-2">Visibility</label>
+                                                        <div class="col-lg-9">
+                                                            <select id="selectVisibility-2" class="custom-select">
+                                                                <option value="publiс">Public</option>
+                                                                <option value="private" selected>Private</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="collapse-2 collapse" aria-labelledby="headingChapter-2" data-parent="#accordionMyBook">
+                                        <div class="card-body p-0">
+                                            <textarea class="summernote" name="BookIdChapter-2">
+                                                
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div id="headingChapter-1" class="card-header">
+                                        <h3 class="h6 d-inline-block mb-0 p-2">Chapter title #1</h3>
+                                        <div class="float-right">
+                                            <button class="btn btn-link text-primary collapsed" data-toggle="collapse" data-target=".collapse-1" aria-expanded="false" aria-controls="collapse-1" data-rel="tooltip" title="Edit chapter" type="button"><i class="fas fa-edit"></i></button>
+                                            <button class="btn btn-link text-primary collapsed" data-toggle="collapse" data-target=".collapseSettings-1" aria-expanded="false" aria-controls="collapseSettings-1" data-rel="tooltip" title="Chapter settings" type="button"><i class="fas fa-cog"></i></button>
+                                            <button id="buttonDeleteChapter-1" class="btn btn-link text-danger ml-4" title="Delete the chapter" data-toggle="modal" data-target="#modalDeleteChapterConfirm" type="button"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="collapseSettings-1 collapse" aria-labelledby="headingChapter-1" data-parent="#accordionMyBook">
+                                        <div class="card-body">
+                                            <form class="form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputChapterTitile-1">The title of the chapter</label>
+                                                    <div class="col-lg-9">
+                                                        <input id="inputChapterTitile-1" class="form-control" type="text" value="Curent chapter title">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaAnnotation-1">Annotation</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea id="textareaAnnotation-1" class="form-control" rows="2" maxlength="128" aria-describedby="descriptionAnnotation-1"></textarea>
+                                                        <small id="descriptionAnnotation-1" class="form-text text-muted">Short about the chapter.</small>
+                                                    </div>
+                                                </div>
+                                                <div class="px-3 pt-3 mb-3 border rounded">
+                                                    <h4 class="h5">Publish settings</h4>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectVisibility-1">Visibility</label>
+                                                        <div class="col-lg-9">
+                                                            <select id="selectVisibility-1" class="custom-select">
+                                                                <option value="publiс">Public</option>
+                                                                <option value="private" selected>Private</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="collapse-1 collapse" aria-labelledby="headingChapter-1" data-parent="#accordionMyBook">
+                                        <div class="card-body p-0">
+                                            <textarea class="summernote" name="BookIdChapter-1">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, eius numquam minus veritatis nam ad error voluptas. Eos veniam maiores esse adipisci, vero voluptates! Velit animi deleniti facere omnis quas.</p>
+                                                <p>Voluptate praesentium alias minus similique voluptates quam tempora ratione sint, sapiente et minima dolores cumque, excepturi laboriosam illum deserunt harum ad dolore maiores perspiciatis quibusdam cupiditate doloremque odio. Autem, sapiente.</p>
+                                                <p>Beatae ipsum tenetur voluptatibus aut sequi soluta, neque, provident, ab reprehenderit natus delectus dolorem dolores, perspiciatis saepe ipsa velit est! Non magnam omnis molestias fugiat. Libero quas veritatis sint explicabo.</p>
+                                                <p>Id voluptates placeat ea iste a maxime nostrum, cumque ipsam similique odio doloremque incidunt veritatis delectus voluptatem quos fugit at perspiciatis. Aliquam eum maiores cupiditate, error porro nostrum pariatur. Sint!</p>
+                                                <p>Reprehenderit sit tempora maiores esse quidem, nesciunt laborum praesentium nihil tempore laboriosam deleniti in maxime nulla officiis asperiores, quisquam ipsum rerum fugit! Suscipit iste, eius culpa itaque voluptatem tempora libero.</p>
+                                                <p>Repellendus ducimus, totam molestiae at accusamus eligendi. Ex veniam accusantium blanditiis! Non veniam magnam suscipit itaque debitis nostrum rem dicta, iste enim provident officiis et, molestiae perspiciatis nam ducimus dolorum!</p>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col text-center">
+                                <a class="btn btn-block btn-outline-primary" href="book.html" target="_blank"><i class="fas fa-book mr-2"></i>Open book's profile</a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="btn btn-block btn-outline-primary" href="reader.html" target="_blank"><i class="fas fa-book-open mr-2"></i>Open book in reader</a>
+                            </div>
+                        </div>
+                        <hr class="row">
+                        <div class="clearfix">
+                            <button id="buttonSaveMention" class="btn btn-primary float-right" type="button"><i class="fas fa-save mr-2"></i>Save changes</button>
+                        </div>
+                    </section>
+                    <section class="tab-pane fade" id="MentionsEdit" role="tabpanel" aria-labelledby="MentionsEditTab">
+                        <h2 class="d-sm-none">Edit mentions</h2>
+                        <div id="mentionsGroupForms">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-8 col-md-6 mb-3">
+                                    <div class="d-flex bd-highlight mb-2">
+                                        <div class="pr-2 bd-highlight">
+                                            <label class="col-form-label form-control-label text-right" for="selectMentionTemplates">Mention</label>
+                                        </div>
+                                        <div class="flex-grow-1 bd-highlight">
+                                            <select id="selectMentionTemplates" class="custom-select">
+                                                <option class="text-muted" value="0" selected>choose one...</option>
+                                                <option value="character">character</option>
+                                                <option value="object">object</option>
+                                                <option value="note">note</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button id="buttonAddMention" class="btn btn-success btn-block" type="button" disabled><i class="fas fa-plus mr-2"></i>Add mention</button>
+                                </div>
+                            </div>
+                            <div class="accordion" id="accordionMentions">
+                                
+                                <div class="card">
+                                    <header class="card-header" id="mentionHeading-2">
+                                        <h3 class="h6 d-inline-block mb-0 p-2">Character mention</h3>
+                                        <div class="float-right">
+                                            <button class="btn btn-link text-primary collapsed" type="button" data-toggle="collapse" data-target=".collapseMention-2" aria-expanded="false" aria-controls="collapseMention-1"><i class="fas fa-edit"></i></button>
+                                            <button id="buttonDeleteMentions-2" class="btn btn-link text-danger ml-4" type="button" title="Delete the chapter"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </header>
+                                    <div class="collapseMention-2 collapse" aria-labelledby="mentionHeading-2" data-parent="#accordionMentions">
+                                        <div class="card-body">
+                                            <form class="form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputMentionKey-2">Text key</label>
+                                                    <div class="col-lg-9">
+                                                        <input id="inputMentionKey-2" class="form-control" type="text" value="" aria-describedby="descriptionMentionKey-2">
+                                                        <small id="descriptionMentionKey-2" class="form-text text-muted">Имя персонажа в произведении.</small>
+                                                        <small class="form-text text-warning"><i class="fas fa-exclamation-circle"></i> Text key не показывается читателям.</small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputMentionTitle-2">Title</label>
+                                                    <div class="col-lg-9">
+                                                        <input id="inputMentionTitle-2" class="form-control" type="text" value="Curent mention title">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="fileMentionImage-2">Image</label>
+                                                    <div class="col-lg-9">
+                                                        <div class="custom-file">
+                                                            <input id="fileMentionImage-2" class="custom-file-input" type="file" aria-describedby="descriptionMentionImage-2">
+                                                            <label class="custom-file-label text-truncate" for="fileMentionImage-2">Choose file</label>
+                                                        </div>
+                                                        <figure class="figure mb-0">
+                                                            <figcaption id="descriptionMentionImage-2" class="figure-caption">Recomended images width or height more than 1024 px!</figcaption>
+                                                            <img class="p-0 border-0 figure-img mw-100 rounded shadow-sm" style="max-height:240px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320' fill='%23e9ecef'%3E%3Ctitle%3EDefault user profile background%3C/title%3E%3Crect class='cls-1' width='320' height='320'%3E%3C/rect%3E%3C/svg%3E%0A">
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaMentionAbout-2">About</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea id="textareaMentionAbout-2" class="form-control" rows="4" maxlength="2048"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <header class="card-header" id="mentionHeading-1">
+                                        <h3 class="h6 d-inline-block mb-0 p-2">Note mention</h3>
+                                        <div class="float-right">
+                                            <button class="btn btn-link text-primary collapsed" type="button" data-toggle="collapse" data-target=".collapseMention-1" aria-expanded="false" aria-controls="collapseMention-2"><i class="fas fa-edit"></i></button>
+                                            <button id="buttonDeleteMentions-1" class="btn btn-link text-danger ml-4" type="button" title="Delete the chapter"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </header>
+                                    <div class="collapseMention-1 collapse" aria-labelledby="mentionHeading-1" data-parent="#accordionMentions">
+                                        <div class="card-body">
+                                            <form class="form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaMentionKey-1">Text key</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea id="textareaMentionKey-1" class="form-control" rows="4" maxlength="2048" aria-describedby="descriptionMentionKey-1"></textarea>
+                                                        <small id="descriptionMentionKey-1" class="form-text text-muted">Слово или часть текста в произведении.</small>
+                                                        <small class="form-text text-warning"><i class="fas fa-exclamation-circle"></i> Text key не показывается читателям.</small>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputMentionTitile-1">Title</label>
+                                                    <div class="col-lg-9">
+                                                        <input id="inputMentionTitile-1" class="form-control" type="text" value="Curent mention title">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaMentionAbout-1">About</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea id="textareaMentionAbout-1" class="form-control" rows="4" maxlength="2048"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col text-center">
+                                <a class="btn btn-block btn-outline-primary" href="book.html" target="_blank"><i class="fas fa-book mr-2"></i>Open book's profile</a>
+                            </div>
+                            <div class="col text-center">
+                                <a class="btn btn-block btn-outline-primary" href="reader.html" target="_blank"><i class="fas fa-book-open mr-2"></i>Open book in reader</a>
+                            </div>
+                        </div>
+                        <hr class="row">
+                        <div class="clearfix">
+                            <button id="buttonSaveMention" class="btn btn-primary float-right" type="button"><i class="fas fa-save mr-2"></i>Save changes</button>
+                        </div>
+                    </section>
+                    <section class="tab-pane fade" id="BookSettings" role="tabpanel" aria-labelledby="BookSettingsTab">
+                        <h2 class="d-sm-none">Book settings</h2>
+                        <div class="mb-3 mx-n3" style="background: rgb(233, 236, 239)">
+                            <div id="BookHeadPreview" class="py-3 py-sm-5 px-3 text-dark"> <!-- style="linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url() no-repeat scroll center / cover" -->
+                                <div class="row">
+                                    <div class="col-md-5 col-lg-4 text-center">
+                                        <div class="rounded shadow-sm"
+                                           data-type="gallery" data-image="images/books/0/cover.svg"
+                                           style="background: url(images/books/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-lg-8">
+                                        <h1 id="inputBookTitilePreview" class="my-3 mt-md-0">Book title</h1>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-user-circle"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Author:</b>
+                                                    <div class="col-8 col-lg-9 pl-0">
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">Имя писателя книги</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-calendar-day"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Published:</b>
+                                                    <time class="col-8 col-lg-9 pl-0" datetime="2018-07-22">22 July 2018</time>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Last edited:</b>
+                                                    <time class="col-8 col-lg-9 pl-0" datetime="2018-10-16">16 October 2018</time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-directions"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Тип:</b>
+                                                    <div class="col-8 col-lg-9 pl-0">
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">Роман</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Жанры:</b>
+                                                    <div class="col-8 col-lg-9 pl-0">
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">Fantasy</span>
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">Magical realism</span>
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">Occult detective</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-link"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Cycle:</b>
+                                                    <div class="col-8 col-lg-9 pl-0">
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">Одисея Бьйорна</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fab fa-leanpub"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Chapters:</b>
+                                                    <span class="col-8 col-lg-9 pl-0">3</span>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Pages:</b>
+                                                    <span class="col-8 col-lg-9 pl-0">85</span>
+                                                </div>
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Symbols:</b>
+                                                    <span class="col-8 col-lg-9 pl-0">75640</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="small mb-2">
+                                            <div class="position-absolute"><i class="fas fa-tags"></i></div>
+                                            <div class="ml-2 pl-3">
+                                                <div class="row">
+                                                    <b class="col-4 col-lg-3 pr-0">Tags:</b>
+                                                    <div class="col-8 col-lg-9 pl-0">
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">tag one</span>
+                                                        <span class="px-1 bg-primary rounded text-white text-nowrap text-decoration-none">second tag</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-5 col-lg-4">
+                                        <div class="d-flex mb-2 mb-md-0">
+                                            <span class="btn flex-grow-1 btn-success">Read for free</span>
+                                            <span id="userEBookDownloadPreview" class="btn btn-primary ml-2"><i class="fas fa-download"></i></span>
+                                        </div>
+                                        <hr class="d-md-none">
+                                    </div>
+                                    <div class="col-md-7 col-lg-8 mt-auto text-center text-md-right">
+                                        <span class="btn btn-sm btn-primary"><i class="fas fa-share-square mr-2"></i>Share</span>
+                                        <span class="btn btn-sm btn-outline-primary"><i class="fas fa-bookmark mr-2"></i>Add bookmark</span>
+                                        <span class="btn btn-sm btn-danger"><i class="fas fa-ban"></i></span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 col-sm-5 col-lg-4 text-md-center">
+                                        <span class="font-weight-bold d-none d-md-inline-block">Book rating:</span>
+                                        <span id="bookRating" class='starrr text-nowrap'
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Начните читать книгу для того чтобы получить возможность проголосовать."><span id="ratingScore" class="pl-2 pr-1"></span></span>
+                                    </div>
+                                    <div class="col-6 col-sm-7 col-lg-8 text-right">
+                                        <span id="checkboxBookAdultPreview" class="border-0 px-1 rounded bg-dark text-white">18+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $('#bookRating').starrr({
+                                    rating: 4.2,
+                                    readOnly: true,
+                                    change: function(e, value){
+//                                        $(this).attr('data-starrr', value)
+                                    }
+                                })
+                            </script>
+                            
+<!--
+                            <div class="row justify-content-center">
+                                <div class="col-sm-8 col-md-6 mb-3">
+                                    <button id="actionToggleProfileHeadShow" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-eye mr-2"></i>Preview head</button>
+                                    <button id="actionToggleProfileHeadHide" style="display: none;" class="mt-0 btn btn-block btn-primary" type="button"><i class="fas fa-eye-slash mr-2"></i>Hide head</button>
+                                </div>
+                            </div>
+-->
+                        </div>
+                        <form class="form" autocomplete="off">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputBookTitile">The title of the book</label>
+                                <div class="col-lg-9">
+                                    <input id="inputBookTitile" class="form-control" type="text" value="Curent title" placeholder="Type book title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="fileBookCover">Cover</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-file">
+                                        <input id="fileBookCover" class="custom-file-input" type="file" aria-describedby="descriptionBookCover">
+                                        <label class="custom-file-label text-truncate" for="fileBookCover">Choose file</label>
+                                    </div>
+                                    <small id="descriptionBookCover" class="form-text text-muted">The loaded image should not be less than 1024 px in width or height. Do not upload small images!</small>
+                                    <!--figure class="figure mb-0">
+                                        <figcaption id="descriptionBookCover" class="figure-caption">The loaded image should not be less than 1024 px in width or height. Do not upload small images!</figcaption>
+                                            <img class="p-0 border-0 figure-img rounded shadow-sm" src="images/books/0/cover.svg" height="128px">
+                                    </figure-->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="fileBookBackground">Background</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-file">
+                                        <input id="fileBookBackground" class="custom-file-input" type="file" aria-describedby="descriptionBookBackground">
+                                        <label class="custom-file-label text-truncate" for="fileBookBackground">Choose file</label>
+                                    </div>
+                                    <small id="descriptionBookBackground" class="form-text text-muted">Do not upload small images width or height less than 1280 px!</small>
+                                    <!--figure class="figure mb-0">
+                                        <figcaption id="descriptionBookBackground" class="figure-caption">Do not upload small images width or height less than 1280 px!</figcaption>
+                                        <img class="p-0 border-0 figure-img mw-100 rounded shadow-sm" style="max-height:128px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 128' fill='%23e9ecef'%3E%3Ctitle%3EDefault user profile background%3C/title%3E%3Crect class='cls-1' width='320' height='128'%3E%3C/rect%3E%3C/svg%3E%0A">
+                                    </figure-->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookType">Type</label>
+                                <div class="col-lg-9">
+                                    <select id="selectBookType" class="custom-select">
+                                        <option value="novel" selected>Роман</option>
+                                        <option value="tale">Рассказ</option>
+                                        <option value="talebook">Сборник рассказов</option>
+                                        <option value="poetry">Поэзия</option>
+                                        <option value="story">Повесть</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookGenre">Genre</label>
+                                <div class="col-lg-9">
+                                    <select id="selectBookGenre" class="js-genre form-control" multiple="multiple">
+                                        <optgroup label="Фантастика">
+                                            <option>Дизель панк</option>
+                                            <option>Ретропия</option>
+                                            <option>Антиутопия</option>
+                                        </optgroup>
+                                        <optgroup label="Любовные романы">
+                                            <option>Мелодраммы</option>
+                                            <option>Не мелораммы</option>
+                                        </optgroup>                                    
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookCycle">Cycle</label>
+                                <div class="col-lg-9">
+                                    <select id="selectBookCycle" class="js-cycle form-control" multiple="multiple" aria-describedby="descriptionBookCycle"></select>
+                                    <small id="descriptionBookCycle" class="form-text text-muted">Select one or type a new cycle name and hit enter.</small>
+                                    <!--div class="border rounded mt-2">
+                                        <header class="p-2">
+                                            <h3 class="h6 mb-0">Books of "Cycle name"</h3>
+                                            <small class="form-text text-muted">Уou can reorder books in the cycle "Cycle name" with the arrow <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> buttons.</small>
+                                        </header>
+                                        <ul class="list-group list-group-flush small rounded-bottom overflow-hidden">
+                                            <li class="list-group-item p-0 d-flex">
+                                                <div class="flex-grow-1 p-2"><a href="#" target="_blank">The title of some book</a></div>
+                                                <div class="pr-2 align-right my-auto">
+                                                    <button class="btn btn-link p-0" type="button" disabled><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                                    <button class="btn btn-link p-0" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item p-0 d-flex">
+                                                <div class="flex-grow-1 p-2"><a href="#" target="_blank">The title of some book</a></div>
+                                                <div class="pr-2 align-right my-auto">
+                                                    <button class="btn btn-link p-0" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                                    <button class="btn btn-link p-0" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item p-0 d-flex">
+                                                <div class="flex-grow-1 p-2"><a href="#" target="_blank">The title of some book</a></div>
+                                                <div class="pr-2 align-right my-auto">
+                                                    <button class="btn btn-link p-0" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                                    <button class="btn btn-link p-0" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item p-0 d-flex">
+                                                <div class="flex-grow-1 p-2">The title of the book</div>
+                                                <div class="pr-2 align-right my-auto">
+                                                    <button class="btn btn-link p-0" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                                    <button class="btn btn-link p-0" type="button" disabled><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                                </div>
+                                            </li>
+                                        </ul>                                            
+                                    </div-->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookTags">Tags</label>
+                                <div class="col-lg-9">
+                                    <select id="selectBookTags" class="js-tag form-control" multiple="multiple" aria-describedby="descriptionBookTags"></select>
+                                    <small id="descriptionBookTags" class="form-text text-muted">Select or type a tag and hit enter.</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaBookAnnotation">Annotation</label>
+                                <div class="col-lg-9">
+                                    <textarea id="textareaBookAnnotation" class="form-control" rows="3" maxlength="1024" aria-describedby="descriptionBookAnnotation"></textarea>
+                                    <small id="descriptionBookAnnotation" class="form-text text-muted">Short about the book. Please - no spoilers!</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="checkboxBookEBook">eBook</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-control custom-switch py-2">
+                                        <input id="checkboxBookEBook" type="checkbox" class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="checkboxBookEBook">Allow read offline (can be downloaded as an eBook)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="checkboxBookAdult">
+                                    <span class="badge badge-dark d-inline-flex align-items-center">18<i class="fas fa-plus fa-xs"></i></span>
+                                </label>
+                                <div class="col-lg-9">
+                                    <div class="custom-control custom-switch py-2">
+                                        <input id="checkboxBookAdult" type="checkbox" class="custom-control-input">
+                                        <label class="custom-control-label" for="checkboxBookAdult">The book contains strong sexual content or graphic nudity or extreme portrayals of violence</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="px-3 pt-3 mb-3 border rounded">
+                                <h3 class="h5">Publish settings</h3>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookStatus">Status</label>
+                                    <div class="col-lg-9">
+                                        <select id="selectBookStatus" class="custom-select" aria-describedby="descriptionBookStatus">
+                                            <option value="completed">Completed book</option>
+                                            <option value="underway" selected>Still Underway</option>
+                                        </select>
+                                        <small id="descriptionBookStatus" class="form-text text-muted">Статус книги выполняет информационную роль и позволяя пользователю понять, окончена работа над книгой или нет.</small>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookVisibility">Visibility</label>
+                                    <div class="col-lg-9">
+                                        <select id="selectBookVisibility" class="custom-select" aria-describedby="descriptionBookVisibility">
+                                            <option value="publiс" selected>Public</option>
+                                            <option value="private">Private</option>
+                                        </select>
+                                        <small id="descriptionBookVisibility" class="form-text text-muted">Для того чтобы скрыть книгу на сайте - следует выбрать "Private".</small>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectBookCost">Cost</label>
+                                    <div class="col-lg-9">
+                                        <select id="selectBookCost" class="custom-select" aria-describedby="descriptionBookCost">
+                                            <option class="d-none" disabled selected>Select one...</option>
+                                            <option value="free">Free book</option>
+                                            <option value="paid">Paid book</option>
+                                        </select>
+                                        <small id="descriptionBookCost" class="form-text text-warning"><i class="fas fa-exclamation-circle"></i> Выбор платная или бесплатная книга возможен только один раз!</small>
+                                        <div id="paidBookSelect" class="form-text d-none">
+                                            <div class="input-group input-group-sm d-inline-flex w-auto">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                                </div>
+                                                <input id="inputBookPrise" class="form-control" placeholder="0.50" type="text" aria-describedby="descriptionBookPrise">
+                                            </div>
+                                            <small id="descriptionBookPrise" class="form-text">
+                                                <span class="text-muted">Not less than $0.5</span>
+                                                <br>
+                                                <span class="text-warning"><i class="fas fa-exclamation-circle"></i> Будьте внимательны - после установки цены на книгу изменить цену будет невозможно!</span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <!--label class="col-lg-3 col-form-label form-control-label text-lg-right" for="bookCost">Cost</label>
+                                    <div class="col-lg-9">
+                                        <div id="bookCost" class="py-2">
+                                            <div class="custom-control custom-radio mb-1">
+                                                <input id="radioBookFree" class="custom-control-input" type="radio" name="customRadio" checked>
+                                                <label class="custom-control-label" for="radioBookFree">Free book</label>
+                                            </div>
+                                            <div class="custom-control custom-radio mb-1">
+                                                <input id="radioBookUserPrice" class="custom-control-input" type="radio" name="customRadio">
+                                                <label class="custom-control-label" for="radioBookUserPrice">User sets own price</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input id="radioBookDonation" class="custom-control-input" type="radio" name="customRadio">
+                                                <label class="custom-control-label" for="radioBookDonation">Donation by readers</label>
+                                            </div>                                           
+                                            <div class="custom-control custom-radio">
+                                                <input id="radioBookPrise" class="custom-control-input" type="radio" name="customRadio">
+                                                <label class="custom-control-label mt-1" for="radioBookPrise">My prise:</label>
+                                                <div class="d-inline-block">
+                                                    <div class="input-group input-group-sm d-inline-flex w-auto">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                                        </div>
+                                                        <input id="inputBookPrise" class="form-control" placeholder="0.50" type="text" aria-describedby="descriptionBookPrise">
+                                                    </div>
+                                                    <small id="descriptionBookPrise" class="form-text text-muted">Not less than $0.5</small>
+                                                </div>
+                                            </div>                                           
+                                        </div>
+                                    </div-->
+                                </div>
+<!--
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="bookCostDonation">Donation</label>
+                                    <div class="col-lg-9">
+                                        <div class="custom-control custom-switch py-2">
+                                            <input type="checkbox" class="custom-control-input" id="bookCostDonation">
+                                            <label class="custom-control-label" for="bookCostDonation">Enable donation from readers</label>
+                                        </div>
+                                    </div>
+                                </div>
+-->                                    
+                            </div>                                    
+                            </form>
+                        <hr class="row">
+                        <div class="clearfix">
+                            <button class="btn btn-link text-decoration-none float-left" type="reset"><i class="fas fa-undo-alt mr-2"></i>Restore</button>
+                            <button id="buttonSaveSettings" class="btn btn-primary float-right"><i class="fas fa-save mr-2"></i>Save changes</button>
+                        </div>
+                    </section>
+                    <section class="tab-pane fade" id="BookDelete" role="tabpanel" aria-labelledby="BookDeleteTab">
+                        <h2 class="d-sm-none">Delete book</h2>
+                        <div class="alert alert-danger border-0">
+                            <div class="h5 font-weight-bold"><i class="fas fa-exclamation-circle mr-3"></i>Внимание</div>
+                            <hr class="my-2">
+                            Книга не имеет финансовых обременений и может быть безвозвратно удалена.
+                        </div>
+                        <div class="alert alert-warning border-0">
+                            <div class="h5 font-weight-bold"><i class="fas fa-exclamation-triangle mr-3"></i>Внимание</div>
+                            <hr class="my-2">
+                            Книга имеет финансовых обременений и не может быть безвозвратно удалена. Данную книгу можно скрыть сделав приватной. Читатели купившие книгу смогут продолжить ей пользоваться.
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="clearfix">
+<!--                            <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalDeleteBookConfirm" type="button"><i class="fas fa-trash mr-2"></i>Delete</button>-->
+                            <button class="btn btn-warning float-right" data-toggle="modal" type="button"><i class="fas fa-eye-slash mr-2"></i>Hide</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+            
+<!--    Start Modal my-books-windows    -->
+    <!--    Delete chapter modal    -->
+        <div class="modal fade" id="modalDeleteChapterConfirm" tabindex="-1" role="dialog" aria-labelledby="modalDeleteChapterConfirmTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalDeleteChapterConfirmTitle">Удаление главы</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены что хотите удалить главу "Название главы"?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-link text-decoration-none mr-auto" data-dismiss="modal" type="button"><i class="fas fa-times mr-2"></i>No</button>
+                        <button class="btn btn-danger" type="submit"><i class="fas fa-check mr-2"></i>Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    <!--    Delete book modal    -->
+        <div class="modal fade" id="modalDeleteBookConfirm" tabindex="-1" role="dialog" aria-labelledby="modalDeleteBookConfirmTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalDeleteBookConfirmTitle">Удаление книги</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены что хотите удалить книгу "Название книги"?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-link text-decoration-none mr-auto" data-dismiss="modal" type="button"><i class="fas fa-times mr-2"></i>No</button>
+                        <button class="btn btn-danger" type="submit"><i class="fas fa-check mr-2"></i>Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            $(function(){
+                // Enable mention templates button
+                $('#selectMentionTemplates').on('change', function(){
+                    if(this.value != '0')
+                        $('#buttonAddMention').prop('disabled', false);
+                    else
+                        $('#buttonAddMention').prop('disabled', true);
+                });
+                
+                // For summernote
+                // https://summernote.org/getting-started/#basic-api
+                $('.summernote').summernote({
+                    placeholder: 'Type here your chapter text',
+                    tabsize: 2,
+                    height: 320
+                });
+                
+                // For select form plugin
+                // https://select2.org/configuration/options-api
+                $(".js-genre").select2({
+                    width: "100%",
+                    maximumSelectionLength: 3,
+                    placeholder: "Select a genre"
+                });
+                $(".js-cycle").select2({
+                    width: "100%",
+                    placeholder: "Select or type a cycle name",
+                    maximumSelectionLength: 1,
+                    tags: true,
+                    tags: ['Name of the book cycle', 'Other cycle name', 'And one more cycle']
+                });
+                $(".js-tag").select2({
+                    width: "100%",
+                    maximumSelectionLength: 6,
+                    placeholder: "Select or type a tag",
+                    tags: true,
+                    tags: ['по умолчанию', 'здесь', 'самые', 'популярные', '10 тегов']
+                });
+            });
+            
+            /* Сustom file input text change on */
+            $(document).ready(function(){
+                bsCustomFileInput.init()
+            })
+            
+            /* Open goal tab from other page */
+            $(document).ready(function(){
+                var hash = window.location.hash;
+                var target = $('[data-toggle="tab"][href="' + hash + '"]');
+                target.trigger('click');
+//                target[0].scrollIntoView(true);
+            });
+            
+            $(function(){
+                
+                $('#inputBookTitile').bind('input', function(){
+                    $('#inputBookTitilePreview').html($(this).val());
+                });
+                
+                // Toggle eBook download button
+                $('#checkboxBookEBook').change(function(){
+                    isEBook(this);
+                });
+                function isEBook(id){
+                    if ($(id).prop('checked'))
+                        $('#userEBookDownloadPreview').show();
+                    else
+                        $('#userEBookDownloadPreview').hide();
+                }
+                
+                // Toggle eBook download button
+                $('#checkboxBookAdult').change(function(){
+                    isAdult(this);
+                });
+                function isAdult(id){
+                    if ($(id).prop('checked'))
+                        $('#checkboxBookAdultPreview').show();
+                    else
+                        $('#checkboxBookAdultPreview').hide();
+                }
+                
+                // Set book cost
+                $('#selectBookCost').change(function(){
+                    setPrice(this);
+                });
+                function setPrice(id){
+                    switch($(id).val()){
+                    case 'free':
+                        $('#paidBookSelect').addClass('d-none');    
+                        $('#buttonSaveSettings').prop('disabled', false);
+                        break;
+                    case 'paid':
+                        $('#paidBookSelect').removeClass('d-none');
+                        $('#buttonSaveSettings').prop('disabled', false);
+                        break;
+                    default:
+                        $('#paidBookSelect, #freeBookSelect').addClass('d-none');
+                        $('#buttonSaveSettings').prop('disabled', true);
+                    };
+                }                
+                
+                // Onload autofill 
+                function autofillPreview(){
+                    $('#inputBookTitilePreview').html($('#inputBookTitile').val());
+                    isEBook('#checkboxBookEBook');
+                    isAdult('#checkboxBookAdult');
+                    setPrice('#selectBookCost');
+                }
+                autofillPreview();
+            });
+        </script>
+    </body>
+</html>

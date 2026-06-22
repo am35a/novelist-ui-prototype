@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+        
+        <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+        
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+
+    </head>
+    <body>
+        <!--#include file="_header.htm"-->
+        <main class="min-vh-100">
+            <div class="container my-5">
+                <header>
+                    <h1 class="my-3">Account settings</h1>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link nav-link-light active" id="nav-edit-profile-tab" data-toggle="tab" href="#nav-edit-profile" role="tab" aria-controls="nav-home" aria-selected="true">
+                            <i class="fas fa-user-edit mr-sm-2"></i><span class="d-none d-sm-inline">Edit Profile</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="nav-security-center-tab" data-toggle="tab" href="#nav-security-center" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <i class="fas fa-user-shield mr-sm-2"></i><span class="d-none d-sm-inline">Security center</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="nav-delete-profile-tab" data-toggle="tab" href="#nav-delete-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <i class="fas fa-pray mr-sm-2"></i><span class="d-none d-sm-inline">Kill me please!</span>
+                        </a>
+                    </div>
+                </header>
+                <div id="nav-tabContent" class="tab-content bg-light p-3 border-left border-right border-bottom rounded-bottom shadow-sm">
+                   
+                    <section class="tab-pane fade show active" id="nav-edit-profile" role="tabpanel" aria-labelledby="nav-edit-profile-tab">
+                        <h2 class="d-sm-none">Edit Profile</h2>
+                        <div class="mb-3 mx-n3" style="background: rgb(233, 236, 239)">
+                            <div id="profileHeadPreview" class="py-3 py-sm-5 px-3 text-dark"> <!-- style="linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url() no-repeat scroll center / cover" -->
+                                <div class="row">
+                                    <div class="col-md-5 col-lg-4 text-center">
+                                        <img class="img-fluid rounded-circle shadow-sm" src="images/users/0/preview.svg" alt="Имя пользователя">
+                                    </div>
+                                    <div class="col-md-7 col-lg-8">
+                                        <div id="inputProfileNicknamePreview" class="h1 my-3 mt-md-0"></div>
+                                        <span class="badge badge-dark mb-3"><i class="fas fa-pen-alt mr-1"></i>Writer</span>
+                                        <span class="badge badge-dark mb-3"><i class="fas fa-glasses mr-1"></i>Reviewer</span>
+                                        <span class="badge badge-dark mb-3"><i class="fas fa-book-reader mr-1"></i>Reader</span>
+                                        <p id="userStatusTextPreview"></p>
+                                        <div class="d-flex small mb-2">
+                                            <div class="mr-2"><i class="fas fa-calendar-day"></i></div>
+                                            <div>
+                                                <span class="font-weight-bold">Joined:</span>
+                                                <time class="px-1" datetime="2018-07-22">22 July 2018</time>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex small mb-2">
+                                            <div class="mr-2"><i class="fas fa-directions"></i></div>
+                                            <div>
+                                                <div>
+                                                    <span class="font-weight-bold">Типы работ:</span>
+                                                    <span class="px-1 bg-primary rounded text-white text-nowrap">Роман</span>
+                                                </div>
+                                                <div>
+                                                    <span class="font-weight-bold">В жанрах:</span>
+                                                    <span class="px-1 bg-primary rounded text-white text-nowrap">Fantasy</span>
+                                                    <span class="px-1 bg-primary rounded text-white text-nowrap">Magical realism</span>
+                                                    <span class="px-1 bg-primary rounded text-white text-nowrap">Occult detective</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="userAdressPreview">
+                                            <div class="d-flex small mb-2">
+                                                <div class="mr-2"><i class="fas fa-address-book"></i></div>
+                                                <div>
+                                                    <div id="userLocationPreview">
+                                                        <span class="font-weight-bold">Adress:</span>
+                                                        <span id="inputProfileCountryPreview" class="ml-2 ml-2 text-nowrap"><i class="fas fa-flag mr-1"></i><span></span></span>
+                                                        <span id="inputProfileCityPreview" class="ml-2 ml-2 text-nowrap"><i class="fas fa-city mr-1"></i><span></span></span>
+                                                    </div>
+                                                    <div id="userContactsPreview">
+                                                        <span class="font-weight-bold">Сontacts:</span>
+                                                        <span id="inputProfilePhonePreview" class="ml-2 ml-2 text-nowrap"><i class="fas fa-phone mr-1"></i><span></span></span>
+                                                        <span id="inputProfileEmailPreview" class="ml-2 ml-2 text-nowrap"><i class="fas fa-at mr-1"></i><span></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-5 col-lg-4">
+                                        <div id="userDonationButton" style="display: none;">
+                                            <button class="btn btn-block btn-primary" type="button" disabled><i class="fas fa-hand-holding-usd mr-2"></i>Make a donation</button>
+                                            <hr class="d-md-none">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-lg-8 mt-auto text-center text-md-right">
+                                        <span class="btn btn-sm btn-primary"><i class="fas fa-share-square mr-2"></i>Share</span>
+                                        <span class="btn btn-sm btn-outline-primary"><i class="fas fa-user-check mr-2"></i>Follow</span>
+                                        <span class="btn btn-sm btn-danger"><i class="fas fa-ban"></i></span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 col-sm-5 col-lg-4 text-md-center">
+                                        <span class="font-weight-bold d-none d-md-inline-block">User rating:</span>
+                                        <span id="userRating" class='starrr text-nowrap'
+                                        data-toggle="popover" data-trigger="focus" data-placement="top"
+                                        title="Как проголосовать?"
+                                        data-content="Никак! Рейтинг пользователя формируется автоматически."></span>
+                                    </div>
+                                    <div class="col-6 col-sm-7 col-lg-8 text-right">
+                                        <span id="inputProfileWebsitePreview" class="mx-1 text-primary"><i class="fas fa-globe fa-lg"></i></span>
+                                        <span id="inputProfileFacebookPreview" class="mx-1 text-primary"><i class="fab fa-facebook fa-lg"></i></span>
+                                        <span id="inputProfileTwitterPreview" class="mx-1 text-primary"><i class="fab fa-twitter fa-lg"></i></span>
+                                        <span id="inputProfileInstagramPreview" class="mx-1 text-primary"><i class="fab fa-instagram fa-lg"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $('#userRating').starrr({
+                                    rating: 3.9,
+                                    readOnly: true,
+                                    change: function(e, value){
+                //                        $(this).attr('data-starrr', value)
+                                    }
+                                })
+                            </script>
+                        </div>
+                        
+                        <form class="form" autocomplete="off">
+                           
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfileNickname">Nickname</label>
+                                <div class="col-lg-9">
+                                    <input id="inputProfileNickname" class="form-control" type="text" maxlength="40" value="User name" aria-describedby="descriptionProfileNickname">
+                                    <small id="descriptionProfileNickname" class="form-text text-muted">... or "Pen name" for writers/arts that won't display their real names</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right">Avatar</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-file">
+                                        <input id="fileProfileAvatar" class="custom-file-input" type="file" aria-describedby="descriptionProfileAvatar">
+                                        <label class="custom-file-label text-truncate" for="fileProfileAvatar">Choose file</label>
+                                        <small id="descriptionProfileAvatar" class="form-text text-muted">The uploaded image will be rounded, cropped and resized to 512x512 px. Do not upload small images!</small>
+                                    </div>
+                                    <!--figure class="figure mb-0">
+                                        <figcaption class="figure-caption">The uploaded image will be rounded, cropped and resized to 512x512 px. Do not upload small images!</figcaption>
+                                        <img class="p-0 border-0 figure-img rounded-circle shadow-sm" src="images/users/0/preview.svg" height="128px">
+                                    </figure-->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right">Background</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-file">
+                                        <input id="fileProfileBackground" class="custom-file-input" type="file" aria-describedby="descriptionProfileBackground">
+                                        <label class="custom-file-label text-truncate" for="fileProfileBackground">Choose file</label>
+                                        <small id="descriptionProfileBackground" class="form-text text-muted">Do not upload small images width or height less than 1280 px!</small>
+                                    </div>
+                                    <!--figure class="figure mb-0">
+                                        <figcaption class="figure-caption">Do not upload small images width or height less than 1280 px!</figcaption>
+                                        <img class="p-0 border-0 figure-img mw-100 rounded shadow-sm" style="max-height:128px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 128' fill='%23e9ecef'%3E%3Ctitle%3EDefault user profile background%3C/title%3E%3Crect class='cls-1' width='320' height='128'%3E%3C/rect%3E%3C/svg%3E%0A">
+                                    </figure-->
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="userStatusText">Status</label>
+                                <div class="col-lg-9">
+                                    <input id="userStatusText" class="form-control" type="text" maxlength="128" aria-describedby="descriptionProfileStatus" value="Строка статуса пользователя будет ограничена по длине 128. Но длина вполне может быть аж на две строки, только представьте себе.">
+                                    <small id="descriptionProfileStatus" class="form-text text-muted">Short length (maxlength 128 symbols) text in your profile.</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaProfileAbout">About</label>
+                                <div class="col-lg-9">
+                                    <textarea id="textareaProfileAbout" class="form-control" rows="3" maxlength="1024" aria-describedby="descriptionProfileAbout"></textarea>
+                                    <small id="descriptionProfileAbout" class="form-text text-muted">Text about yourself in your profile.</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfilePhone">Phone</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-phone fa-lg"></i></span>
+                                        </div>
+                                        <input id="inputProfilePhone" class="form-control" type="phone">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfileEmail">Email</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-at fa-lg"></i></span>
+                                        </div>
+                                        <input id="inputProfileEmail" class="form-control" type="email" value="" aria-describedby="descriptionProfileEmail">
+                                    </div>
+                                    <small id="descriptionProfileEmail" class="form-text text-warning"><i class="fas fa-exclamation-triangle"></i> We don't recommend using eMail that you use for "Sign in"! Use a different email to display in your profile.</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right">Locations</label>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <div class="form-group col-sm-12 col-md-6 mb-md-0">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-flag fa-lg"></i></span>
+                                                </div>
+                                                <input id="inputProfileCountry" class="form-control" type="text" placeholder="Country/Region">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12 col-md-6 mb-0">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-city fa-lg"></i></span>
+                                                </div>
+                                                <input id="inputProfileCity" class="form-control" type="text" placeholder="City/Location">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfileWebsite">Website URL</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-globe fa-lg"></i></span>
+                                        </div>
+                                        <input id="inputProfileWebsite" class="form-control" type="url" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3 pt-3 mb-3 border rounded">
+                                <h3 class="h5">Social links</h3>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfileFacebook">Facebook</label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fab fa-facebook fa-lg"></i></span>
+                                            </div>
+                                            <input id="inputProfileFacebook" class="form-control" type="url" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfileTwitter">Twitter</label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fab fa-twitter fa-lg"></i></span>
+                                            </div>
+                                            <input id="inputProfileTwitter" class="form-control" type="url" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputProfileInstagram">Instagram</label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fab fa-instagram fa-lg"></i></span>
+                                            </div>
+                                            <input id="inputProfileInstagram" class="form-control" type="url" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="checkboxProfileDonation">Donation</label>
+                                <div class="col-lg-9">
+                                    <div class="py-2">
+                                        <div class="custom-control custom-switch">
+                                            <input id="checkboxProfileDonation" class="custom-control-input" type="checkbox" aria-describedby="descriptionProfileDonation" disabled>
+                                            <label class="custom-control-label" for="checkboxProfileDonation">Enable donation from users</label>
+                                        </div>
+                                        <small id="descriptionProfileDonation" class="form-text text-warning"><i class="fas exclamation-triangle"></i> Not active for readers. Must write at least one book or be one of a books partner (co-author)!</small>
+                                    </div>                                        
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row justify-content-center mb-3"> 
+<!--
+                                <div class="col-6">
+                                    <button id="actionToggleProfileHeadShow" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-eye mr-2"></i>Preview head</button>
+                                    <button id="actionToggleProfileHeadHide" style="display: none;" class="mt-0 btn btn-block btn-primary" type="button"><i class="fas fa-eye-slash mr-2"></i>Hide head</button>
+                                </div>
+-->
+                                <div class="col-6">
+                                    <a class="btn btn-block btn-outline-primary" href="profile.html"><i class="fas fa-id-card mr-2"></i>Open user's profile</a>
+                                </div>
+                            </div>
+                            <hr class="mx-n3">
+                            <div class="clearfix">
+                                <button class="btn btn-link text-decoration-none float-left" type="reset"><i class="fas fa-undo-alt mr-2"></i>Restore</button>
+                                <button id="buttonProfileSave" class="btn btn-primary float-right" type="submit"><i class="fas fa-save mr-2"></i>Save changes</button>
+                            </div>
+                        </form>
+                    </section>
+                    
+                    <section class="tab-pane fade" id="nav-security-center" role="tabpanel" aria-labelledby="nav-security-center-tab">
+                        <h2 class="d-sm-none">Security center</h2>
+                        <div class="row justify-content-md-end">
+                            <div class="col-md-9">
+                                <div class="alert alert-info border-0">
+                                    <div class="h5 font-weight-bold"><i class="fas fa-info-circle mr-3"></i>Confirmation</div>
+                                    <hr class="my-2">
+                                    Любые изменения во вкладке "Security center" необходимо подтвердить для принятия изменений. Ссылка на подтверждения будет отправлена вам на email curent@email.com.
+                                </div>
+                                <div class="alert alert-danger border-0">
+                                    <div class="h5 font-weight-bold"><i class="fas fa-exclamation-circle mr-3"></i>Рrivacy</div>
+                                    <hr class="my-2">
+                                    Не передавайте данные для входа Username и Password третьим лицам, чтобы не допустить получения посторонними доступа к данным вашей учетной записи.
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form" autocomplete="off">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputSecurityUsername">Username</label>
+                                <div class="col-lg-9">
+                                    <input id="inputSecurityUsername" class="form-control" type="text" value="Curent username" aria-describedby="descriptionSecurityUsername">
+                                    <small id="descriptionSecurityUsername" class="form-text text-muted">Username is confidential and not accessible to other users.</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputSecurityEmail">Email</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-at fa-lg"></i></span>
+                                        </div>
+                                        <input id="inputSecurityEmail" class="form-control" type="email" value="curent@email.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputSecurityPassword">Password</label>
+                                <div class="col-lg-9">
+                                    <input id="inputSecurityPassword" class="form-control" type="password" value="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputSecurityConfirmPassword">Confirm password</label>
+                                <div class="col-lg-9">
+                                    <input id="inputSecurityConfirmPassword" class="form-control" type="password" value="">
+                                </div>
+                            </div>
+                            <hr class="mx-n3">
+                            <div class="clearfix">
+                                <button class="btn btn-link text-decoration-none float-left" type="reset"><i class="fas fa-undo-alt mr-2"></i>Restore</button>
+                                <button id="buttonsSecuritySave" class="btn btn-primary float-right" type="submit"><i class="fas fa-save mr-2"></i>Save changes</button>
+                            </div>
+                        </form>
+                    </section>
+                    
+                    <section class="tab-pane fade" id="nav-delete-profile" role="tabpanel" aria-labelledby="nav-delete-profile-tab">
+                        <h2 class="d-sm-none">Delete account</h2>
+                        <div class="row justify-content-md-end">
+                            <div class="col-md-9">
+                                <div class="alert alert-danger border-0">
+                                    <div class="h5 font-weight-bold"><i class="fas fa-exclamation-circle mr-3"></i>Delete account</div>
+                                    <hr class="my-2">
+                                    Ваш аккаунт будет деактивирован, а профайл и книги не будут больше доступны читателям для покупки и чтения. Все купленные книги останутся в библиотеках покупателей.
+                                </div>
+                                <div class="alert alert-info border-0">
+                                    <div class="h5 font-weight-bold"><i class="fas fa-info-circle mr-3"></i>Confirmation</div>
+                                    <hr class="my-2">
+                                    Для окончательного подтверждения удаления/деактивации аккаунта необходимо перейти по ссылке, которая будет отправлена на email curent@email.com.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form class="form" autocomplete="off">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaDeleteReason">Reason</label>
+                                <div class="col-lg-9">
+                                    <textarea id="textareaDeleteReason" class="form-control" rows="3" maxlength="1024" aria-describedby="descriptionDeleteReason"></textarea>
+                                    <small id="descriptionDeleteReason" class="form-text text-muted">Прежде чем покинуть нас, возможно вы захотиле оставить отзыв о нашем ресурсе и прокомментировать причину удаления/деактивации акаунта.</small>
+                                </div>
+                            </div>
+                        </form>
+                        <hr class="mx-n3">
+                        <div class="clearfix">
+                            <button id="buttonDeleteAccount" class="btn btn-danger float-right" type="submit" data-toggle="modal" data-target="#modalDeleteAccountConfirm"><i class="fas fa-trash mr-2"></i>Delete</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+<!--    Start Modal account-windows    -->
+    <!--    Delete book modal    -->
+        <div class="modal fade" id="modalDeleteAccountConfirm" tabindex="-1" role="dialog" aria-labelledby="modalDeleteAccountConfirmTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div id="modalDeleteAccountConfirmTitle" class="h5 modal-title">Удаление аккаунта</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены что хотите удалить свой аккаутн?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-link text-decoration-none mr-auto" data-dismiss="modal" type="button"><i class="fas fa-times mr-2"></i>No</button>
+                        <button class="btn btn-danger" type="submit"><i class="fas fa-check mr-2"></i>Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            $(function(){
+//                $('#actionToggleProfileHeadShow, #actionToggleProfileHeadHide').click(function(){
+//                    $('#actionToggleProfileHeadShow, #actionToggleProfileHeadHide, #profileHeadPreview').toggle();
+//                    
+//                });
+                
+                $('#inputProfileNickname').bind('input', function(){
+                    $('#inputProfileNicknamePreview').html($(this).val());
+                });
+                $('#userStatusText').bind('input', function(){
+                    $('#userStatusTextPreview').html($(this).val());
+                });
+                $('#checkboxProfileDonation').change(function(){
+                    isDonation(this);
+                });
+                
+                $('#inputProfileCountry').bind('input', function(){
+                    isCountry(this);
+                });
+                $('#inputProfileCity').bind('input', function(){
+                    isCity(this);
+                });
+                
+                $('#inputProfilePhone').bind('input', function(){
+                    isPhone(this);
+                });
+                $('#inputProfileEmail').bind('input', function(){
+                    isEmail(this);
+                });
+                
+                $('#inputProfileWebsite').bind('input', function(){
+                    isLinks('#inputProfileWebsite');
+                });
+                $('#inputProfileFacebook').bind('input', function(){
+                    isLinks('#inputProfileFacebook');
+                });
+                $('#inputProfileTwitter').bind('input', function(){
+                    isLinks('#inputProfileTwitter');
+                });
+                $('#inputProfileInstagram').bind('input', function(){
+                    isLinks('#inputProfileInstagram');
+                });
+                
+                
+                function isDonation(id){
+                    if($(id).prop('checked'))
+                        $('#userDonationButton').show();
+                    else
+                        $('#userDonationButton').hide();
+                }
+                
+                function isCountry(id){
+                    if($(id).val() != ''){
+                        if($('#userAdressPreview').is(':hidden'))
+                            $('#userAdressPreview').show();
+                        if($('#inputProfileCountryPreview').is(':hidden'))
+                            $('#inputProfileCountryPreview').show();
+                        if($('#userLocationPreview').is(':hidden'))
+                            $('#userLocationPreview').show();
+                        $('#inputProfileCountryPreview span').html($(id).val());
+                    }
+                    else {
+                        $('#inputProfileCountryPreview').hide();
+                        if ($('#inputProfileCityPreview').is(':hidden')){
+                            $('#userLocationPreview').hide();
+                            if($('#userContactsPreview').is(':hidden'))
+                                $('#userAdressPreview').hide();
+                        }
+                    }
+                }
+                function isCity(id){
+                    if($(id).val() != ''){
+                        if($('#userAdressPreview').is(':hidden'))
+                            $('#userAdressPreview').show();
+                        if($('#inputProfileCityPreview').is(':hidden'))
+                            $('#inputProfileCityPreview').show();
+                        if($('#userLocationPreview').is(':hidden'))
+                            $('#userLocationPreview').show();
+                        $('#inputProfileCityPreview span').html($(id).val());
+                    }
+                    else {
+                        $('#inputProfileCityPreview').hide();
+                        if ($('#inputProfileCountryPreview').is(':hidden')){
+                            $('#userLocationPreview').hide();
+                            if($('#userContactsPreview').is(':hidden'))
+                                $('#userAdressPreview').hide();
+                        }
+                    }
+                }
+                
+                function isPhone(id){
+                    if($(id).val() != ''){
+                        if($('#userAdressPreview').is(':hidden'))
+                            $('#userAdressPreview').show();
+                        if($('#inputProfilePhonePreview').is(':hidden'))
+                            $('#inputProfilePhonePreview').show();
+                        if($('#userContactsPreview').is(':hidden'))
+                            $('#userContactsPreview').show();
+                        $('#inputProfilePhonePreview span').html($(id).val());
+                    }
+                    else {
+                        $('#inputProfilePhonePreview').hide();
+                        if($('#inputProfileEmailPreview').is(':hidden')){
+                            $('#userContactsPreview').hide();
+                            if($('#userLocationPreview').is(':hidden'))
+                                $('#userAdressPreview').hide();
+                        }
+                    }
+                }
+                function isEmail(id){
+                    if($(id).val() != ''){
+                        if($('#userAdressPreview').is(':hidden'))
+                            $('#userAdressPreview').show();
+                        if($('#inputProfileEmailPreview').is(':hidden'))
+                            $('#inputProfileEmailPreview').show();
+                        if($('#userContactsPreview').is(':hidden'))
+                            $('#userContactsPreview').show();
+                        $('#inputProfileEmailPreview span').html($(id).val());
+                    }
+                    else {
+                        $('#inputProfileEmailPreview').hide();
+                        if($('#inputProfilePhonePreview').is(':hidden')){
+                            $('#userContactsPreview').hide();
+                            if($('#userLocationPreview').is(':hidden'))
+                                $('#userAdressPreview').hide();
+                        }
+                    }
+                }
+                function isLinks(id){
+                    if($(id).val() != '')
+                        $(id + 'Preview').show();
+                    else
+                        $(id + 'Preview').hide();
+                }
+                function autofillPreview(){
+                    $('#inputProfileNicknamePreview').html($('#inputProfileNickname').val());
+                    $('#userStatusTextPreview').html($('#userStatusText').val());
+                    isDonation('#checkboxProfileDonation');
+                    isCountry('#inputProfileCountry');
+                    isCity('#inputProfileCity');
+                    isPhone('#inputProfilePhone');
+                    isEmail('#inputProfileEmail');
+                    isLinks('#inputProfileWebsite');
+                    isLinks('#inputProfileFacebook');
+                    isLinks('#inputProfileTwitter');
+                    isLinks('#inputProfileInstagram');
+                    
+//                    $('#profileHeadPreview').show();
+                }
+                
+                autofillPreview();
+            });
+            
+            /* Сustom file input text change on */
+            /*document.addEventListener('DOMContentLoaded', function(){
+                bsCustomFileInput.init()
+                var btn = document.getElementById('btnResetForm')
+                var form = document.querySelector('form')
+                btn.addEventListener('click', function(){
+                    form.reset()
+                })
+            });*/
+            $(document).ready(function () {
+                bsCustomFileInput.init()
+            })
+        </script>
+  
+    </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+        
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>        
+    </head>
+    <body>
+        <!--#include file="_header.htm"-->
+        <main class="min-vh-100">
+            <div class="container my-5">
+                <header>
+                    <h1 class="my-3">The title of the cycle</h1>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link nav-link-light active" id="CycleSettingsTab" data-toggle="tab" href="#CycleSettings" role="tab" aria-controls="CycleSettings" aria-selected="true">
+                            <i class="fas fa-cog mr-sm-2"></i><span class="d-none d-sm-inline">Cycle settings</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="CycleBooksTab" data-toggle="tab" href="#CycleBooks" role="tab" aria-controls="CycleBooks" aria-selected="true">
+                            <i class="fas fa-link mr-sm-2"></i><span class="d-none d-sm-inline">Cycle books</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="CycleDeleteTab" data-toggle="tab" href="#CycleDelete" role="tab" aria-controls="CycleDelete" aria-selected="true">
+                            <i class="fas fa-trash mr-sm-2"></i><span class="d-none d-sm-inline">Delete cycle</span>
+                        </a>
+                    </div>
+                </header>
+                <div id="nav-tabContent" class="tab-content bg-light p-3 border-left border-right border-bottom rounded-bottom shadow-sm">
+                    <section id="CycleSettings" class="tab-pane fade show active" role="tabpanel" aria-labelledby="CycleSettingsTab">
+                        <h2 class="d-sm-none">Cycle settings</h2>
+                        <form class="form" autocomplete="off">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="inputCycleTitile">The title of the cycle</label>
+                                <div class="col-lg-9">
+                                    <input id="inputCycleTitile" class="form-control" type="text" value="Curent title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="fileCycleCover">Cover</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-file">
+                                        <input id="fileCycleCover" class="custom-file-input" type="file" aria-describedby="descriptionCycleCover">
+                                        <label class="custom-file-label text-truncate" for="fileCycleCover">Choose file</label>
+                                    </div>
+                                    <small id="descriptionCycleCover" class="form-text text-muted">The loaded image should not be less than 1024 px in width or height. Do not upload small images!</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="fileCycleBackground">Background</label>
+                                <div class="col-lg-9">
+                                    <div class="custom-file">
+                                        <input id="fileCycleBackground" class="custom-file-input" type="file" aria-describedby="descriptionCycleBackground">
+                                        <label class="custom-file-label text-truncate" for="fileCycleBackground">Choose file</label>
+                                    </div>
+                                    <small id="descriptionCycleBackground" class="form-text text-muted">Do not upload small images width or height less than 1280 px!</small>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="textareaCycleAnnotation">Annotation</label>
+                                <div class="col-lg-9">
+                                    <textarea id="textareaCycleAnnotation" class="form-control" rows="3" maxlength="1024" aria-describedby="descriptionCycleAnnotation"></textarea>
+                                    <small id="descriptionCycleAnnotation" class="form-text text-muted">Short about the cycle.</small>
+                                </div>
+                            </div>
+                            
+                            <div class="px-3 pt-3 mb-3 border rounded">
+                                <h3 class="h5">Publish settings</h3>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-lg-right" for="selectCycleVisibility">Visibility</label>
+                                    <div class="col-lg-9">
+                                        <select id="selectCycleVisibility" class="custom-select" aria-describedby="descriptionCycleVisibility">>
+                                            <option value="publiс" selected>Public</option>
+                                            <option value="private">Private</option>
+                                        </select>
+                                        <small id="descriptionCycleVisibility" class="form-text text-warning"><i class="fas fa-exclamation-circle"></i> Changing visibility will affect all books in the cycle!</small>
+                                    </div>
+                                </div>
+                            </div>    
+                            
+                        </form>
+                        <hr class="row">
+                        <div class="clearfix">
+                            <button class="btn btn-link text-decoration-none float-left" type="reset"><i class="fas fa-undo-alt mr-2"></i>Restore</button>
+                            <button id="buttonSaveSettings" class="btn btn-primary float-right"><i class="fas fa-save mr-2"></i>Save changes</button>
+                        </div>
+                    </section>
+                    <section id="CycleBooks" class="tab-pane fade" role="tabpanel" aria-labelledby="CycleBooksTab">
+                        <h2 class="d-sm-none">Cycle books</h2>
+                        <div id="cycleGroupForms">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-8 col-md-6 mb-3">
+                                    <div class="d-flex bd-highlight mb-2">
+                                        <div class="pr-2 bd-highlight">
+                                            <label class="col-form-label form-control-label text-right" for="selectBook">Books</label>
+                                        </div>
+                                        <div class="flex-grow-1 bd-highlight">
+                                            <select id="selectBook" class="custom-select">
+                                                <option class="d-none" disabled selected>Select one...</option>
+                                                <option value="1">The title of the book</option>
+                                                <option value="2">The title of the book</option>
+                                                <option value="3">The title of the book</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button id="buttonAddBook" class="btn btn-success btn-block" type="button" disabled><i class="fas fa-plus mr-2"></i>Add to cycle</button>
+                                </div>
+                            </div>
+                            <div class="alert alert-info border-0">
+                                <div class="alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                    <div class="h5 font-weight-bold"><i class="fas fa-info-circle mr-3"></i>Notation</div>
+                                </div>
+                                <hr class="my-2">
+                                Уou can reorder books in the cycle by the arrow <i class="fas fa-arrow-alt-circle-up"></i> <i class="fas fa-arrow-alt-circle-down"></i> buttons.
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex flex-column flex-md-row">
+                                    <div class="flex-grow-1 my-auto"><a href="book.html" target="_blank">The title of some book</a><span class="float-right text-muted">5</span></div>
+                                    <div class="ml-md-2 text-md-right d-flex flex-nowrap">
+                                        <button class="btn btn-link px-1" type="button" disabled><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                        <button id="buttonRemoveBook5" class="btn btn-link text-warning ml-auto ml-md-4" type="button" title="Remove from cycle"><i class="fas fa-unlink"></i></button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex flex-column flex-md-row">
+                                    <div class="flex-grow-1 my-auto"><a href="book.html" target="_blank">The title of some book</a><span class="float-right text-muted">4</span></div>
+                                    <div class="ml-md-2 text-md-right d-flex flex-nowrap">
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                        <button id="buttonRemoveBook4" class="btn btn-link text-warning ml-auto ml-md-4" type="button" title="Remove from cycle"><i class="fas fa-unlink"></i></button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex flex-column flex-md-row">
+                                    <div class="flex-grow-1 my-auto"><a href="book.html" target="_blank">The title of some book</a><span class="float-right text-muted">3</span></div>
+                                    <div class="ml-md-2 text-md-right d-flex flex-nowrap">
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                        <button id="buttonRemoveBook3" class="btn btn-link text-warning ml-auto ml-md-4" type="button" title="Remove from cycle"><i class="fas fa-unlink"></i></button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex flex-column flex-md-row">
+                                    <div class="flex-grow-1 my-auto"><a href="book.html" target="_blank">The title of some book</a><span class="float-right text-muted">2</span></div>
+                                    <div class="ml-md-2 text-md-right d-flex flex-nowrap">
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                        <button id="buttonRemoveBook2" class="btn btn-link text-warning ml-auto ml-md-4" type="button" title="Remove from cycle"><i class="fas fa-unlink"></i></button>
+                                    </div>
+                                </li>
+                                <li class="list-group-item d-flex flex-column flex-md-row">
+                                    <div class="flex-grow-1 my-auto"><a href="book.html" target="_blank">The title of some book</a><span class="float-right text-muted">1</span></div>
+                                    <div class="ml-md-2 text-md-right d-flex flex-nowrap">
+                                        <button class="btn btn-link px-1" type="button"><i class="fas fa-lg fa-arrow-alt-circle-up"></i></button>
+                                        <button class="btn btn-link px-1" type="button" disabled><i class="fas fa-lg fa-arrow-alt-circle-down"></i></button>
+                                        <button id="buttonRemoveBook1" class="btn btn-link text-warning ml-auto ml-md-4" type="button" title="Remove from cycle"><i class="fas fa-unlink"></i></button>
+                                    </div>
+                                </li>
+                            </ul>                            
+                        </div>
+                    </section>
+                    <section id="CycleDelete" class="tab-pane fade" role="tabpanel" aria-labelledby="CycleDeleteTab">
+                        <h2 class="d-sm-none">Delete cycle</h2>
+                        <div class="alert alert-info mb-0 border-0">
+                            <div class="h5 font-weight-bold"><i class="fas fa-info-circle mr-3"></i>Внимание</div>
+                            <hr class="my-2">
+                            Удаление цикла не влечет за собой удаление входящих в него книг. После удаления цикла, книги входившие в цикл потеряют общие связей.
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="clearfix">
+                            <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalDeleteCycleConfirm" type="button"><i class="fas fa-trash mr-2"></i>Delete</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+            
+<!--    Start Modal my-cycle-windows    -->
+    <!--    Delete cycle modal    -->
+        <div class="modal fade" id="modalDeleteCycleConfirm" tabindex="-1" role="dialog" aria-labelledby="modalDeleteCycleConfirmTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalDeleteCycleConfirmTitle">Удаление цикла</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены что хотите удалить цикл "Название цикла"?
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-link text-decoration-none mr-auto" data-dismiss="modal" type="button"><i class="fas fa-times mr-2"></i>No</button>
+                        <button class="btn btn-danger" type="submit"><i class="fas fa-check mr-2"></i>Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            $(function(){
+                // Enable add books button
+                $('#selectBook').on('change', function(){
+                    if(this.value > '0')
+                        $('#buttonAddBook').prop('disabled', false);
+                    else
+                        $('#buttonAddBook').prop('disabled', true);
+                });
+            });
+            
+            /* Open goal tab from other page */
+            $(document).ready(function() {
+                var hash = window.location.hash;
+                var target = $('[data-toggle="tab"][href="' + hash + '"]');
+                target.trigger('click');
+//                target[0].scrollIntoView(true);
+            });
+        </script>
+        
+    </body>
+</html>

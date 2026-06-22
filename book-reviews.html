@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_book-page-info.htm"-->
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-white shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="book.html" title="Name of the book"><i class="fas fa-book"></i></a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap" href="book-mentions.html">Mentions <span class="badge badge-pill bg-secondary text-light">27</span></a>
+                    <a class="nav-link text-nowrap" href="book-illustrations.html">Illustrations <span class="badge badge-pill bg-secondary text-light">9</span></a>
+                    <a class="nav-link text-nowrap" href="book-quotations.html">Quotations <span class="badge badge-pill bg-secondary text-light">18</span></a>
+                    <a class="nav-link text-nowrap disabled" href="book-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">3</span></a>
+                    <a class="nav-link text-nowrap" href="book-guestbook.html">Guestbook <span class="badge badge-pill bg-secondary text-light">843</span></a>
+                    <a class="nav-link text-nowrap" href="book-bookmarks.html">In bookmarks <span class="badge badge-pill bg-secondary text-light">3</span></a>
+                    <a class="nav-link text-nowrap" href="book-activity.html">Activity</a>
+                    <a class="nav-link text-nowrap" href="book-statistic.html">Statistic</a>
+                </nav>
+            </div>
+            <section class="container">
+                <header class="mb-3">
+                    <h2>Reviews</h2>
+                </header>               
+                <div class="btn-toolbar">
+                    <div class="position-relative flex-grow-1" data-action="clearable">
+                        <input id="inputInIllustrationsSearch" class="form-control" type="search" placeholder="Search by keywords, author, citation or ect." aria-label="Search">
+                        <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden border-bottom small mb-3">
+                    <div class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                        <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                        <a class="nav-link text-nowrap" href="#">Popular<i class="fas fa-sort-amount-up ml-1"></i></a>
+                        <a class="nav-link text-nowrap" href="#">Rating</a>
+                        <a class="nav-link text-nowrap" href="#">Comments</a>
+                        <a class="nav-link text-nowrap" href="#">Date</a>
+                    </div>
+                </div>
+                <div id="bookReviewsList" class="card-list">
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <div class="mb-1 small text-muted">
+                                        <span class="badge-warning rounded pl-1 mr-3" data-toggle="tooltip" data-placement="top" title="Rating">
+                                            4.1<i class="fas fa-star ml-1"></i>
+                                        </span>
+                                        <span class="mr-2" data-toggle="tooltip" data-placement="top" title="... has written a book">
+                                            <i class="fas fa-pen-alt mr-1"></i>3
+                                        </span>
+                                        <span class="mr-2" data-toggle="tooltip" data-placement="top" title="... has given review of a book">
+                                            <i class="fas fa-glasses mr-1"></i>32
+                                        </span>
+                                        <span data-toggle="tooltip" data-placement="top" title="Followers">
+                                            <i class="fas fa-heart mr-1"></i>1029
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body h5 mb-0 text-truncate" title="The title of the review">The title of the review</div>
+                        <div class="card-body pt-md-0">
+                            <div class="small mb-2 text-muted">
+                                <span class="mb-2 pr-3">
+                                    <span class="position-absolute"><i class="fas fa-book"></i></span>
+                                    <span class="ml-1 pl-3">
+                                        <a class="px-1 bg-primary rounded text-white text-decoration-none" href="book.html">The title of the book</a>
+                                    </span>
+                                </span>
+                                <span class="mb-2">
+                                    <span class="position-absolute"><i class="fas fa-pen-alt"></i></span>
+                                    <span class="ml-1 pl-3">
+                                        <a class="px-1 bg-primary rounded text-white text-decoration-none" href="profile.html">Author Name</a>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="small mb-3 text-muted">
+                                <span class="mb-2 pr-3 text-success" data-toggle="tooltip" data-placement="top" title="Book opinion">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviewed: 22 October 2019">
+                                    <span class="position-absolute"><i class="fas fa-edit"></i></span>
+                                    <time class="ml-1 pl-3" datetime="2019-10-22T10:03">2 days ago</time>
+                                </span>
+                                <span class="mb-2" data-toggle="tooltip" data-placement="top" title="Comments">
+                                    <span class="position-absolute"><i class="fas fa-comments"></i></span>
+                                    <span class="ml-1 pl-3">85</span>
+                                </span>
+                            </div>
+                            Magnam libero nulla, doloremque sit sequi. Cumque at ducimus doloremque sit eius minima nisi quis iste! Odit sunt voluptates suscipit similique eveniet numquam, necessitatibus non error sapiente eligendi, ab cum
+                            ...
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-review.html">Read review</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <div class="mb-1 small text-muted">
+                                        <span class="badge-warning rounded pl-1 mr-3" data-toggle="tooltip" data-placement="top" title="Rating">
+                                            3.6<i class="fas fa-star ml-1"></i>
+                                        </span>
+                                        <span class="mr-2" data-toggle="tooltip" data-placement="top" title="... has written a book">
+                                            <i class="fas fa-pen-alt mr-1"></i>3
+                                        </span>
+                                        <span class="mr-2" data-toggle="tooltip" data-placement="top" title="... has given review of a book">
+                                            <i class="fas fa-glasses mr-1"></i>32
+                                        </span>
+                                        <span data-toggle="tooltip" data-placement="top" title="Followers">
+                                            <i class="fas fa-heart mr-1"></i>1029
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body h5 mb-0 text-truncate" title="The title of the review">The title of the review</div>
+                        <div class="card-body pt-md-0">
+                            <div class="small mb-2 text-muted">
+                                <span class="mb-2 pr-3">
+                                    <span class="position-absolute"><i class="fas fa-book"></i></span>
+                                    <span class="ml-1 pl-3">
+                                        <a class="px-1 bg-primary rounded text-white text-decoration-none" href="book.html">The title of the book</a>
+                                    </span>
+                                </span>
+                                <span class="mb-2">
+                                    <span class="position-absolute"><i class="fas fa-pen-alt"></i></span>
+                                    <span class="ml-1 pl-3">
+                                        <a class="px-1 bg-primary rounded text-white text-decoration-none" href="profile.html">Author Name</a>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="small mb-3 text-muted">
+                                <span class="mb-2 pr-3 text-warning" data-toggle="tooltip" data-placement="top" title="Book opinion">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviewed: 22 October 2019">
+                                    <span class="position-absolute"><i class="fas fa-edit"></i></span>
+                                    <time class="ml-1 pl-3" datetime="2019-10-22T10:03">2 days ago</time>
+                                </span>
+                                <span class="mb-2" data-toggle="tooltip" data-placement="top" title="Comments">
+                                    <span class="position-absolute"><i class="fas fa-comments"></i></span>
+                                    <span class="ml-1 pl-3">85</span>
+                                </span>
+                            </div>
+                            Magnam libero nulla, doloremque sit sequi. Cumque at ducimus doloremque sit eius minima nisi quis iste! Odit sunt voluptates suscipit similique eveniet numquam, necessitatibus non error sapiente eligendi, ab cum
+                            ...
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-review.html">Read review</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header">
+                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                <div class="media-body overflow-hidden">
+                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                    <div class="mb-1 small text-muted">
+                                        <span class="badge-success rounded pl-1 mr-3" data-toggle="tooltip" data-placement="top" title="Rating">
+                                            5<i class="fas fa-star ml-1"></i>
+                                        </span>
+                                        <span class="mr-2" data-toggle="tooltip" data-placement="top" title="... has written a book">
+                                            <i class="fas fa-pen-alt mr-1"></i>3
+                                        </span>
+                                        <span class="mr-2" data-toggle="tooltip" data-placement="top" title="... has given review of a book">
+                                            <i class="fas fa-glasses mr-1"></i>32
+                                        </span>
+                                        <span data-toggle="tooltip" data-placement="top" title="Followers">
+                                            <i class="fas fa-heart mr-1"></i>1029
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body h5 mb-0 text-truncate" title="The title of the review">The title of the review</div>
+                        <div class="card-body pt-md-0">
+                            <div class="small mb-2 text-muted">
+                                <span class="mb-2 pr-3">
+                                    <span class="position-absolute"><i class="fas fa-book"></i></span>
+                                    <span class="ml-1 pl-3">
+                                        <a class="px-1 bg-primary rounded text-white text-decoration-none" href="book.html">The title of the book</a>
+                                    </span>
+                                </span>
+                                <span class="mb-2">
+                                    <span class="position-absolute"><i class="fas fa-pen-alt"></i></span>
+                                    <span class="ml-1 pl-3">
+                                        <a class="px-1 bg-primary rounded text-white text-decoration-none" href="profile.html">Author Name</a>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="small mb-3 text-muted">
+                                <span class="mb-2 pr-3 text-danger" data-toggle="tooltip" data-placement="top" title="Book opinion">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span class="mb-2 pr-3" data-toggle="tooltip" data-placement="top" title="Reviewed: 22 October 2019">
+                                    <span class="position-absolute"><i class="fas fa-edit"></i></span>
+                                    <time class="ml-1 pl-3" datetime="2019-10-22T10:03">2 days ago</time>
+                                </span>
+                                <span class="mb-2" data-toggle="tooltip" data-placement="top" title="Comments">
+                                    <span class="position-absolute"><i class="fas fa-comments"></i></span>
+                                    <span class="ml-1 pl-3">85</span>
+                                </span>
+                            </div>
+                            Magnam libero nulla, doloremque sit sequi. Cumque at ducimus doloremque sit eius minima nisi quis iste! Odit sunt voluptates suscipit similique eveniet numquam, necessitatibus non error sapiente eligendi, ab cum
+                            ...
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-review.html">Read review</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <footer>
+                    <button id="buttonBookReviewsLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more reviews...</button>
+                </footer>
+            </section>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

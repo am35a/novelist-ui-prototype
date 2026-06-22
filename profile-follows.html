@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+            
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_profile-user-info.htm"-->
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-light shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="profile.html"><i class="fas fa-id-card mr-2"></i>Profile</a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap" href="profile-books.html">Books <span class="badge badge-pill bg-secondary text-light">7</span></a><!-- мои книги -->
+                    <a class="nav-link text-nowrap" href="profile-cycles.html">Cycles <span class="badge badge-pill bg-secondary text-light">2</span></a><!-- мои циклы -->
+                    <a class="nav-link text-nowrap" href="profile-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">189&#8226;16</span></a><!-- мои подписчики * я подписан -->
+                    <a class="nav-link text-nowrap" href="profile-library.html">Library <span class="badge badge-pill bg-secondary text-light">2&#8226;3&#8226;3</span></a><!-- я читаю * я прочел * в закладках -->
+                    <a class="nav-link text-nowrap disabled" href="profile-follows.html">Follows <span class="badge badge-pill bg-secondary text-light">127&#8226;6</span></a><!-- я слежу * за мной следят -->
+                </nav>
+            </div>
+            <div class="container">
+                <div class="mb-3">
+                    <div class="nav nav-pills" id="pills-tab" role="tablist">
+                        <a class="nav-item nav-link nav-link-light active" id="pills-mybooks-tab" data-toggle="pill" href="#pills-mybooks" role="tab" aria-controls="nav-home" aria-selected="true">
+                            <sup class="fas fa-long-arrow-alt-down"></sup><i class="fas fa-user mr-sm-2"></i><span class="d-none d-sm-inline">My followers</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="pills-imreading-tab" data-toggle="pill" href="#pills-imreading" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <sup class="fas fa-long-arrow-alt-up"></sup><i class="fas fa-user mr-sm-2"></i><span class="d-none d-sm-inline">I'm following</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="pills-mybooks" role="tabpanel" aria-labelledby="pills-mybooks-tab">
+                        <h2 class="h3 d-sm-none">My followers</h2>
+                        <div id="profileMyFollowersFull" class="card-deck">
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="position-absolute d-flex w-100 p-2">
+                                    <div class="small text-muted my-auto">
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Followers"><sup><i class="fas fa-long-arrow-alt-down"></i></sup><i class="fas fa-user mr-1"></i>29</span>
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Following"><sup><i class="fas fa-long-arrow-alt-up"></i></sup><i class="fas fa-user mr-1"></i>174</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary ml-auto" type="button"><i class="fas fa-user-check mr-2"></i>Follow</button>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="pl-4 pt-4 pr-4 pb-2">
+                                        <div class="rounded-circle shadow-sm"
+                                           style="background: url(images/users/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Имя пользователя не слабое</title></svg>
+                                        </div>
+                                    </div>
+                                    <span class="h5 text-center text-ellipsis mb-2">Имя пользователя не слабое</span>
+                                    <div class="mb-2">
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has written a book"><i class="fas fa-pen-alt mr-1"></i>3</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has given review of a book"><i class="fas fa-glasses mr-1"></i>32</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... had read a book"><i class="fas fa-book-reader mr-1"></i>180</span>
+                                    </div>
+                                    <time class="d-block small text-muted" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i><span class="font-weight-bold">Joined:</span> 22 October 2018</time>
+                                    <hr>
+                                    <div>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Website"><i class="fas fa-globe fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-primary" href="profile.html">View profile</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="position-absolute d-flex w-100 p-2">
+                                    <div class="small text-muted my-auto">
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Followers"><sup><i class="fas fa-long-arrow-alt-down"></i></sup><i class="fas fa-user mr-1"></i>29</span>
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Following"><sup><i class="fas fa-long-arrow-alt-up"></i></sup><i class="fas fa-user mr-1"></i>174</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary ml-auto" type="button"><i class="fas fa-user-check mr-2"></i>Follow</button>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="pl-4 pt-4 pr-4 pb-2">
+                                        <div class="rounded-circle shadow-sm"
+                                           style="background: url(images/users/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Имя пользователя не слабое</title></svg>
+                                        </div>
+                                    </div>
+                                    <span class="h5 text-center text-ellipsis mb-2">Имя пользователя не слабое</span>
+                                    <div class="mb-2">
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has written a book"><i class="fas fa-pen-alt mr-1"></i>3</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has given review of a book"><i class="fas fa-glasses mr-1"></i>32</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... had read a book"><i class="fas fa-book-reader mr-1"></i>180</span>
+                                    </div>
+                                    <time class="d-block small text-muted" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i><span class="font-weight-bold">Joined:</span> 22 October 2018</time>
+                                    <hr>
+                                    <div>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Website"><i class="fas fa-globe fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-primary" href="profile.html">View profile</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="position-absolute d-flex w-100 p-2">
+                                    <div class="small text-muted my-auto">
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Followers"><sup><i class="fas fa-long-arrow-alt-down"></i></sup><i class="fas fa-user mr-1"></i>29</span>
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Following"><sup><i class="fas fa-long-arrow-alt-up"></i></sup><i class="fas fa-user mr-1"></i>174</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary ml-auto" type="button"><i class="fas fa-user-minus mr-2"></i>Unfollow</button>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="pl-4 pt-4 pr-4 pb-2">
+                                        <div class="rounded-circle shadow-sm"
+                                           style="background: url(images/users/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Имя пользователя не слабое</title></svg>
+                                        </div>
+                                    </div>
+                                    <span class="h5 text-center text-ellipsis mb-2">Имя пользователя не слабое</span>
+                                    <div class="mb-2">
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has written a book"><i class="fas fa-pen-alt mr-1"></i>3</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has given review of a book"><i class="fas fa-glasses mr-1"></i>32</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... had read a book"><i class="fas fa-book-reader mr-1"></i>180</span>
+                                    </div>
+                                    <time class="d-block small text-muted" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i><span class="font-weight-bold">Joined:</span> 22 October 2018</time>
+                                    <hr>
+                                    <div>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Website"><i class="fas fa-globe fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-primary" href="profile.html">View profile</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="position-absolute d-flex w-100 p-2">
+                                    <div class="small text-muted my-auto">
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Followers"><sup><i class="fas fa-long-arrow-alt-down"></i></sup><i class="fas fa-user mr-1"></i>29</span>
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Following"><sup><i class="fas fa-long-arrow-alt-up"></i></sup><i class="fas fa-user mr-1"></i>174</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary ml-auto" type="button"><i class="fas fa-user-check mr-2"></i>Follow</button>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="pl-4 pt-4 pr-4 pb-2">
+                                        <div class="rounded-circle shadow-sm"
+                                           style="background: url(images/users/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Имя пользователя не слабое</title></svg>
+                                        </div>
+                                    </div>
+                                    <span class="h5 text-center text-ellipsis mb-2">Имя пользователя не слабое</span>
+                                    <div class="mb-2">
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has written a book"><i class="fas fa-pen-alt mr-1"></i>3</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has given review of a book"><i class="fas fa-glasses mr-1"></i>32</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... had read a book"><i class="fas fa-book-reader mr-1"></i>180</span>
+                                    </div>
+                                    <time class="d-block small text-muted" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i><span class="font-weight-bold">Joined:</span> 22 October 2018</time>
+                                    <hr>
+                                    <div>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Website"><i class="fas fa-globe fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-primary" href="profile.html">View profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="buttonMyFollowersLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more books...</button>
+                    </div>
+                    <div class="tab-pane fade" id="pills-imreading" role="tabpanel" aria-labelledby="pills-imreading-tab">
+                        <h2 class="h3 d-sm-none">I'm following</h2>
+                        <div id="profileImFollowingFull" class="card-deck">
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="position-absolute d-flex w-100 p-2">
+                                    <div class="small text-muted my-auto">
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Followers"><sup><i class="fas fa-long-arrow-alt-down"></i></sup><i class="fas fa-user mr-1"></i>29</span>
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Following"><sup><i class="fas fa-long-arrow-alt-up"></i></sup><i class="fas fa-user mr-1"></i>174</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary ml-auto" type="button"><i class="fas fa-user-minus mr-2"></i>Unfollow</button>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="pl-4 pt-4 pr-4 pb-2">
+                                        <div class="rounded-circle shadow-sm"
+                                           style="background: url(images/users/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Имя пользователя не слабое</title></svg>
+                                        </div>
+                                    </div>
+                                    <span class="h5 text-center text-ellipsis mb-2">Имя пользователя не слабое</span>
+                                    <div class="mb-2">
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has written a book"><i class="fas fa-pen-alt mr-1"></i>3</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has given review of a book"><i class="fas fa-glasses mr-1"></i>32</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... had read a book"><i class="fas fa-book-reader mr-1"></i>180</span>
+                                    </div>
+                                    <time class="d-block small text-muted" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i><span class="font-weight-bold">Joined:</span> 22 October 2018</time>
+                                    <hr>
+                                    <div>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Website"><i class="fas fa-globe fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-primary" href="profile.html">View profile</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="position-absolute d-flex w-100 p-2">
+                                    <div class="small text-muted my-auto">
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Followers"><sup><i class="fas fa-long-arrow-alt-down"></i></sup><i class="fas fa-user mr-1"></i>29</span>
+                                        <span class="ml-2" data-toggle="tooltip" data-placement="top" title="Following"><sup><i class="fas fa-long-arrow-alt-up"></i></sup><i class="fas fa-user mr-1"></i>174</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary ml-auto" type="button"><i class="fas fa-user-minus mr-2"></i>Unfollow</button>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="pl-4 pt-4 pr-4 pb-2">
+                                        <div class="rounded-circle shadow-sm"
+                                           style="background: url(images/users/0/preview.svg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Имя пользователя не слабое</title></svg>
+                                        </div>
+                                    </div>
+                                    <span class="h5 text-center text-ellipsis mb-2">Имя пользователя не слабое</span>
+                                    <div class="mb-2">
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has written a book"><i class="fas fa-pen-alt mr-1"></i>3</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... has given review of a book"><i class="fas fa-glasses mr-1"></i>32</span>
+                                        <span class="badge badge-secondary mr-1" data-toggle="tooltip" data-placement="top" title="... had read a book"><i class="fas fa-book-reader mr-1"></i>180</span>
+                                    </div>
+                                    <time class="d-block small text-muted" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i><span class="font-weight-bold">Joined:</span> 22 October 2018</time>
+                                    <hr>
+                                    <div>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Website"><i class="fas fa-globe fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a class="mx-1" href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-primary" href="profile.html">View profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="buttonImFollowingLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more books...</button>
+                    </div>
+                </div>                
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

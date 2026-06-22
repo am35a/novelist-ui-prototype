@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/reader.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+        <script src="js/reader.js"></script>
+<!--        <script src="js/selectizze.js"></script>-->
+    </head>
+    <body>
+        <!--#-include file="_header-reader.htm"-->
+        <header id="collapseHeaderMenu" class="position-fixed z-index-1 w-100">
+            <div class="p-2 bg-dark text-light d-flex flex-nowrap align-items-center">
+                <a href="#" title="Novelist - share your impressions">
+                    <img class="d-sm-none" src="images/logo/logo.svg" height="40px" alt="Novelist">
+                    <img class="d-none d-sm-block" src="images/logo/logoname.svg" height="40px" alt="Novelist">
+                </a>
+                <div class="d-flex align-items-center ml-auto">
+                    <button id="bookInfo" class="btn btn-sm text-light mx-sm-2" data-toggle="collapse" data-target="#collapseInfo" type="button"><i class="fas fa-info-circle fa-lg"></i></button>
+                    <button id="bookList" class="btn btn-sm text-light mx-sm-2" data-toggle="collapse" data-target="#collapseList" type="button"><i class="fas fa-list fa-lg"></i></button>
+                    <button id="bookList" class="btn btn-sm text-light mx-sm-2" data-toggle="collapse" data-target="#collapseSettings" type="button"><i class="fas fa-cog fa-lg"></i></button>
+                    <div class="btn-group btn-group-sm mx-2">
+                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#modalSignIn"><i class="fas fa-sign-in-alt mr-md-2"></i><span class="d-none d-md-inline">Sign in</span></button>
+                        <button class="btn btn-sm btn-success" type="button" data-toggle="modal" data-target="#modalSignUp"><i class="fas fa-user-plus mr-md-2"></i><span class="d-none d-md-inline">Sign up</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-scroller position-absolute bg-light w-100 shadow-sm">
+                <div id="collapseInfo" class="collapse reader-collapse" aria-labelledby="bookInfo" data-parent="#collapseHeaderMenu">
+                    <!--#include file="_book-page-info.htm"-->
+                </div>
+                <div id="collapseList" class="collapse reader-collapse py-3 py-sm-5 px-0 px-sm-3" aria-labelledby="bookList" data-parent="#collapseHeaderMenu">
+                    <div class="container">
+                        <div class="mb-3">
+                            <div class="nav nav-pills" id="pills-tab" role="tablist">
+                                <a class="nav-item nav-link nav-link-light active" id="pills-contents-tab" data-toggle="pill" href="#pills-contents" role="tab" aria-controls="nav-home" aria-selected="true">
+                                    <i class="fas fa-list-ol mr-sm-2"></i><span class="d-none d-sm-inline">Table of contents</span>
+                                </a>
+                                <a class="nav-item nav-link nav-link-light" id="pills-bookmarks-tab" data-toggle="pill" href="#pills-bookmarks" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                    <i class="fas fa-bookmark mr-sm-2"></i><span class="d-none d-sm-inline">Table of bookmarks</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tab-content mb-3" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="pills-contents" role="tabpanel" aria-labelledby="pills-contents-tab">
+                                <h2 class="d-sm-none">Table of contents</h2>
+                                <div class="list-group text-left">
+                                    <a href="#" class="list-group-item list-group-item-action active">
+                                        <span class="h5 mb-1">Пролог же</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 3</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <span class="h5 mb-1">Название главы книги</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 2</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <span class="h5 mb-1">Название главы книги</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 8</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <span class="h5 mb-1">Название главы книги</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 12</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <span class="h5 mb-1">Название главы книги</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 9</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <span class="h5 mb-1">Название главы книги</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 11</div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <span class="h5 mb-1">Эпилог типо</span>
+                                        <p class="mb-1 small pl-2">Коментарий к главе который может оставить автор книги для пользователя. Думаю надо ограничить длину 128 символами.</p>
+                                        <div class="text-right small">страниц: 1</div>
+                                    </a>
+                                </div>                   
+                            </div>
+                            <div class="tab-pane fade" id="pills-bookmarks" role="tabpanel" aria-labelledby="pills-bookmarks-tab">
+                                <h2 class="d-sm-none">Table of bookmarks</h2>
+                                <div class="list-group text-left">
+                                    <div class="list-group-item list-group-item-action">
+                                        <button class="btn btn-sm btn-outline-danger border-0 float-right"><i class="fas fa-trash"></i></button>
+                                        <a class="d-block text-dark text-decoration-none" href="#">
+                                            <span class="h5 mb-1">Название главы книги</span>
+                                            <p class="mb-1 small pl-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto atque quasi ut vero nesciunt voluptatum, itaque eius qui incidunt eaque sequi perferendis fugit enim. Nulla amet consequuntur ad sunt omnis.</p>
+                                            <div class="text-right small">
+                                                <time class="float-left" datetime="2018-07-22">22 July 2018</time>
+                                                страница: 1
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="list-group-item list-group-item-action">
+                                        <button class="btn btn-sm btn-outline-danger border-0 float-right"><i class="fas fa-trash"></i></button>
+                                        <a class="d-block text-dark text-decoration-none" href="#">
+                                            <span class="h5 mb-1">Название главы книги</span>
+                                            <p class="mb-1 small pl-2">Optio commodi, ratione aperiam corporis, asperiores voluptatibus magni molestiae dignissimos placeat excepturi enim nobis quia, et labore distinctio porro aliquid, accusantium deleniti! Distinctio quae molestiae excepturi animi accusantium dolores modi.</p>
+                                            <div class="text-right small">
+                                                <time class="float-left" datetime="2018-07-10">10 July 2018</time>
+                                                страница: 1
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="collapseSettings" class="collapse reader-collapse py-3 py-sm-5 px-0 px-sm-3" aria-labelledby="ReaderSettings" data-parent="#collapseHeaderMenu">
+                    <div class="container">
+                        <span class="h5 d-inline-block mb-3"><i class="fas fa-adjust mr-2"></i>Color mode</span>
+                        <div class="btn-group d-flex" role="group" aria-label="Color model">
+                            <button id="colorModel1" class="btn btn-light" type="button">Light</button>
+                            <button id="colorModel2" class="btn btn-secondary" type="button">Gray</button>
+                            <button id="colorModel3" class="btn btn-dark" type="button">Dark</button>
+                        </div>
+                        <span class="h5 d-inline-block my-3"><i class="fas fa-text-height mr-2"></i>Font size</span>
+                        <div class="btn-group d-flex" role="group" aria-label="Color model">
+                            <button id="fontSize1" class="btn p-0 btn-transparent" type="button">Normal</button>
+                            <button id="fontSize2" class="btn p-0 btn-transparent" type="button" style="font-size: 125%;">Middle</button>
+                            <button id="fontSize3" class="btn p-0 btn-transparent" type="button" style="font-size: 150%;">Big</button>
+                        </div>
+<!--
+                            <div class="my-3">
+                                <button id="toggleColor" class="btn btn-sm text-light- mx-sm-2" type="button"><i class="fas fa-adjust fa-lg"></i></button>
+                                <button id="toggleSize" class="btn btn-sm text-light- mx-sm-2" type="button"><i class="fas fa-text-height fa-lg"></i></button>
+                            </div>
+-->
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="min-vh-100">
+            <article id="bookContent" class="container pt-4 pb-3 pt-md-5 hyphens" lang="ru"> <!-- атрибут lang обязателен, без него переносы слов будут не корректны, пользователь должен будет указывать язык на котором написанна книга-->
+                <h2 class="mt-5 mb-3">Глава 1: За сиськами и письками</h2>
+                <span class="d-flex align-items-center small mb-3">
+                    <small class="text-nowrap">Название книги</small>
+                    <span class="flex-fill mx-2 border-bottom"></span>
+                    <small class="text-nowrap">Page 1</small>
+                </span>
+                <div class="page-1">
+                    <p>С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    <p>Таким образом новая модель организационной деятельности способствует подготовки и реализации систем массового участия. Товарищи! сложившаяся структура организации представляет собой интересный эксперимент проверки направлений прогрессивного развития.</p>
+                    <p class="bookmarked">Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности позволяет оценить значение новых предложений. Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                    <p>Если у вас есть какие то интересные предложения, обращайтесь! Студия <span class="border-bottom" data-type="mention" data-mention="mentionsId-2189" role="button">Web-Boss</span>
+                        <span id="mentionsId-2189" class="row rounded m-3 border py-3">
+                            <span class="col-12 mb-3">
+                                <span class="float-right fas fa-times-circle" data-dismiss="mention" data-mention="mentionsId-2189" aria-label="Close" role="button"></span>
+                                <span class="d-block pr-4">Mention title</span>
+                            </span>
+                            <span class="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
+                                <img class="img-fluid rounded" alt="Amet, consectetur adipisicing elit"
+                                     src="https://i.pinimg.com/originals/4a/9d/c3/4a9dc3e04dc862580b7f56988e27a4ee.jpg"
+                                     data-type="gallery" data-image="https://i.pinimg.com/originals/4a/9d/c3/4a9dc3e04dc862580b7f56988e27a4ee.jpg">
+                            </span>
+                            <span class="col-12 col-md-8 col-lg-10">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis esse ea culpa ducimus deleniti possimus molestiae quam doloremque at ratione unde iusto, itaque suscipit minus expedita omnis, quod sequi dicta.
+                            </span>
+                        </span>
+                        всегда готова решить любую задачу. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании новых предложений.</p>
+                    <p>Идейные соображения высшего порядка, а также укрепление и развитие структуры играет важную роль в формировании существенных финансовых и административных условий. Таким образом реализация намеченных плановых заданий позволяет оценить значение новых предложений.</p>
+                    <figure class="text-center">
+                        <img class="img-fluid rounded" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+                             src="https://i.kinja-img.com/gawker-media/image/upload/s--MrLx7ocP--/c_scale,f_auto,fl_progressive,q_80,w_800/l5luskqeprim7l1llid2.jpg"
+                             data-type="gallery" data-image="https://i.kinja-img.com/gawker-media/image/upload/s--MrLx7ocP--/c_scale,f_auto,fl_progressive,q_80,w_800/l5luskqeprim7l1llid2.jpg">
+                        <figcaption class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+                    </figure>
+                    <p>Равным образом рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности позволяет оценить значение новых предложений.</p>
+                    <p>С другой стороны рамки и место обучения кадров способствует подготовки и реализации модели развития. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке модели развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    <p>Не следует, однако забывать, что дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    <p>Таким образом реализация намеченных плановых заданий позволяет оценить значение новых предложений. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    <p>Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании новых предложений. Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                    <p>С другой стороны укрепление и развитие структуры обеспечивает участие в формировании систем массового участия. Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.</p>
+                </div>
+                <span class="d-flex align-items-center small mb-3">
+                    <small class="text-nowrap">Название книги</small>
+                    <span class="flex-fill mx-2 border-bottom"></span>
+                    <small class="text-nowrap">Page 2</small>
+                </span>
+                <div class="page-2">
+                    <p>Равным образом консультация с широким активом требуют определения и уточнения модели развития. Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    <p>Товарищи! сложившаяся структура организации представляет собой интересный эксперимент проверки направлений прогрессивного развития. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.</p>
+                    <p>Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании новых предложений.</p>
+                    <p>Равным образом рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. Не следует, однако забывать, что дальнейшее развитие различных форм деятельности способствует подготовки и реализации форм развития. Таким образом новая модель организационной деятельности способствует подготовки и реализации систем массового участия.</p>
+                    <p>Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    <p>Товарищи! сложившаяся структура организации представляет собой интересный эксперимент проверки направлений прогрессивного развития. Если у вас есть какие то интересные предложения, обращайтесь! Студия Web-Boss всегда готова решить любую задачу. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.</p>
+                    <p>Таким образом новая модель организационной деятельности способствует подготовки и реализации систем массового участия. С другой стороны рамки и место обучения кадров способствует подготовки и реализации модели развития. С другой стороны укрепление и развитие структуры обеспечивает участие в формировании систем массового участия.</p>
+                    <p>Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. С другой стороны укрепление и развитие структуры обеспечивает участие в формировании систем массового участия.</p>
+                    <p>Равным образом консультация с широким активом требуют определения и уточнения модели развития. Повседневная практика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+                    <p>Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании новых предложений. Таким образом реализация намеченных плановых заданий позволяет оценить значение новых предложений.</p>
+                    <p>Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития. Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции позволяет оценить значение модели развития.</p>
+                </div>
+            </article>
+            
+            <div id="selectedTextMenu" class="d-none btn-group-select btn-group-vertical bg-white rounded shadow-sm mr-1 p-2 position-fixed">
+                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#modalStickyNote" data-rel="tooltip" data-placement="left" title="Sticky a note"><i class="fas fa-sticky-note"></i></button>
+                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#modalMakeQuotation" data-rel="tooltip" data-placement="left" title="Make a quotation"><i class="fas fa-quote-right"></i></button>
+                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#modalFoundError" data-rel="tooltip" data-placement="left" title="Found an error?"><i class="fas fa-comment-alt"></i></button>
+            </div>
+            
+            <footer class="pb-5">
+                <div class="container mb-3 text-center">
+                    <button class="btn btn-block btn-light border mb-3" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Read more</button>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-light border disabled"><i class="fas fa-angle-double-left"></i><span class="d-none d-sm-inline-block ml-2">Prev</span></a>
+                        <div class="btn-group">
+                            <a class="btn btn-light border" href="#">1</a>
+                            <a class="btn btn-light border" href="#">2</a>
+                            <a class="btn btn-light border" href="#">3</a>
+                            <a class="btn btn-light border" href="#">4</a>
+                            <a class="btn btn-light border" href="#">5</a>
+                        </div>
+                        <a href="#" class="btn btn-light border"><span class="d-none d-sm-inline-block mr-2">Next</span><i class="fas fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+                <div id="canReview" class="mt-5 text-center d-none">
+                    <a href="#" class="btn btn-success border-0"><i class="fas fa-marker mr-2"></i>Leave a review</a>
+                </div>
+                <div class="mt-5 text-center">
+                    <span class="font-weight-bold mr-2">Rate the book:</span><span id="bookRateTheBook" class="starrr text-nowrap"></span>
+                </div>
+            </footer>
+        </main>
+        <!--#include file="_sign-windows.htm"-->
+        
+<!--    Start Modal text select    -->
+    <!--    Sticky modal    -->
+        <div class="modal fade" id="modalStickyNote" tabindex="-1" role="dialog" aria-labelledby="modalStickyNote" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalStickyNote">Sticky notes</div>
+                        <button type="button" class="close" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Sticky notes from books are private and available only for its creator. View and edit list of sticky notes can into account area." role="button">
+                            <i class="fas fa-question small"></i>
+                        </button>
+                        <button type="button" class="close ml-3" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="inputNoteTitle">Note title</label>
+                            <input id="inputNoteTitle" class="form-control" type="text" maxlength="128">
+                            <small class="text-muted">Оptional field</small>                        
+                        </div>
+                        <textarea id="textareaNoteSeletedText" class="form-control" name="text" rows="4" wrap="soft" disabled></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-decoration-none" data-dismiss="modal"><i class="fas fa-times mr-2"></i>Close</button>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-save mr-2"></i>Save note</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--    Quote modal    -->
+        <div class="modal fade" id="modalMakeQuotation" tabindex="-1" role="dialog" aria-labelledby="modalMakeQuotation" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalMakeQuotation">Quotations</div>
+                        <button type="button" class="close" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="By highlighting texts of the books that you liked most and creating quotes, you share the best moments of books with other readers." role="button">
+                            <i class="fas fa-question small"></i>
+                        </button>
+                        <button type="button" class="close ml-3" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="textareaQuotationsSeletedText" class="form-control mb-3" name="text" rows="4" wrap="soft" disabled></textarea>
+                        <label for="inputQuotationsTitle">Comment for quote</label>
+                        <input id="inputQuotationsTitle" class="form-control" type="text" maxlength="128">
+                        <small class="text-muted">Оptional field</small>                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-decoration-none" data-dismiss="modal"><i class="fas fa-times mr-2"></i>Close</button>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-share mr-2"></i>Share quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--    Error modal    -->
+        <div class="modal fade" id="modalFoundError" tabindex="-1" role="dialog" aria-labelledby="modalFoundError" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalFoundError">Found an error</div>
+                        <button type="button" class="close" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Help improve books, tell authors about typos, mistakes, etc." role="button">
+                            <i class="fas fa-question small"></i>
+                        </button>
+                        <button type="button" class="close ml-3" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="textareaErrorSeletedText" class="form-control mb-3" name="text" rows="3" wrap="soft" disabled></textarea>
+                        <textarea id="textareaDescriptionMessage" class="form-control" name="error" rows="3" wrap="soft" maxlength="256" placeholder="Error description"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-decoration-none" data-dismiss="modal"><i class="fas fa-times mr-2"></i>Close</button>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane mr-2"></i>Send error</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            
+            $(function(){
+                var seltxt;
+                $('article').on('touchend click', function(){
+                    seltxt = '';
+                    var sel = document.getSelection();
+                    var pref = '', post = '';
+                    if (sel.rangeCount > 1){
+                        pref = ' {';
+                        post = '} ';
+                    }
+                    for(var i = 0; i < sel.rangeCount; i++) {
+                        seltxt += pref + sel.getRangeAt(i).toString() + post;
+                    }
+                    if(seltxt.length > 256)
+                        seltxt = seltxt.substring(0, 253) + post;
+                    if(seltxt == ''){
+                        $('#selectedTextMenu').addClass('d-none');
+                    }else{
+                        $('#selectedTextMenu').removeClass('d-none');
+                    }
+                });
+                $('.modal')
+                    .on('show.bs.modal', function(){
+                        if(seltxt !== '')
+                            $('#selectedTextMenu').addClass('d-none');
+                    })
+                    .on('hide.bs.modal', function(){
+                        seltxt = '';
+                    });
+                $('#modalStickyNote').on('show.bs.modal', function(){
+                    $('#textareaNoteSeletedText').html(seltxt);
+                });
+                $('#modalMakeQuotation').on('show.bs.modal', function(){
+                    $('#textareaQuotationsSeletedText').html(seltxt);
+                });
+                $('#modalFoundError').on('show.bs.modal', function(){
+                    $('#textareaErrorSeletedText').html(seltxt);
+                });
+            });
+        </script>
+        
+        <script>
+            $('#bookRateTheBook').starrr({
+                emptyClass: 'far fa-star fa-lg',
+                fullClass: 'fas fa-star fa-lg',
+                change: function(e, value){
+                    $('#canReview').toggleClass('d-none')
+//                    $(this).attr('data-starrr', value)
+                }
+            })
+        </script>
+    </body>
+</html>

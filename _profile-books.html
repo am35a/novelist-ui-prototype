@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.novelist.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_profile-user-info.htm"-->
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-light shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="profile.html"><i class="fas fa-id-card mr-2"></i>Profile</a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap disabled" href="profile-books.html">Books <span class="badge badge-pill bg-secondary text-light">7&#8226;6&#8226;1</span></a><!-- мои книги * в циклах циклы * без циклов -->
+                    <a class="nav-link text-nowrap" href="profile-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">189&#8226;16</span></a><!-- мои подписчики * я подписан -->
+                    <a class="nav-link text-nowrap" href="profile-library.html">Library <span class="badge badge-pill bg-secondary text-light">2&#8226;3&#8226;3</span></a><!-- я читаю * я прочел * в закладках -->
+                    <a class="nav-link text-nowrap" href="profile-follows.html">Follows <span class="badge badge-pill bg-secondary text-light">127&#8226;6</span></a><!-- я слежу * за мной следят -->
+                </nav>
+            </div>
+            
+            <div class="container">
+                
+                <nav class="mb-3">
+                    <div class="nav nav-pills" id="pills-tab" role="tablist">
+                        <a class="nav-item nav-link nav-link-light active" id="pills-mybooks-tab" data-toggle="pill" href="#pills-mybooks" role="tab" aria-controls="nav-home" aria-selected="true">
+                            <i class="fas fa-book mr-sm-2"></i><span class="d-none d-sm-inline">All books</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="pills-cycles-tab" data-toggle="pill" href="#pills-cycles" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <i class="fas fa-link mr-sm-2"></i><span class="d-none d-sm-inline">By cycles</span>
+                        </a>
+                        <a class="nav-item nav-link nav-link-light" id="pills-free-tab" data-toggle="pill" href="#pills-free" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <i class="fas fa-unlink mr-sm-2"></i><span class="d-none d-sm-inline">Cycles free</span>
+                        </a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                   
+                    <div class="tab-pane fade show active" id="pills-mybooks" role="tabpanel" aria-labelledby="pills-mybooks-tab">
+                        <h2 class="h3 d-sm-none">My books</h2>
+                        <div id="profileMyBooksFull" class="card-deck">
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/1/cover.jpg"
+                                   style="background: url(images/books/1/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/2/cover.jpg"
+                                   style="background: url(images/books/2/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/3/cover.jpg"
+                                   style="background: url(images/books/3/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-warning" href="reader.html">Read for $0.99</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/4/cover.jpg"
+                                   style="background: url(images/books/4/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/5/cover.jpg"
+                                   style="background: url(images/books/5/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-warning" href="reader.html">Read for $0.25</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/6/cover.jpg"
+                                   style="background: url(images/books/6/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/7/cover.jpg"
+                                   style="background: url(images/books/7/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-warning" href="reader.html">Read for $2</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="pills-cycles" role="tabpanel" aria-labelledby="pills-cycles-tab">
+                        <h2 class="h3 d-sm-none">I'm reading</h2>
+                        <div id="profileCyclesFull">
+                            <section class="mb-5">
+                                <header>
+                                    <h3>The first cycle name</h3>
+                                    <hr>
+                                </header>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro numquam ratione, est molestias. Mollitia possimus distinctio iusto tempora quis dignissimos aspernatur reiciendis unde iure ratione, inventore in cumque vitae, fuga.
+                                </p>
+                                <div class="owl-carousel owl-theme">
+                                    <div class="card border-0 mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                                <div class="media-body overflow-hidden">
+                                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                            <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                        </a>
+                                        <div class="card-img-center position-relative"
+                                           data-type="gallery" data-image="images/books/3/cover.jpg"
+                                           style="background: url(images/books/3/preview.jpg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+                                                <title>Название книги - сейчас со скидкой 70%</title>
+                                            </svg>
+                                        </div>
+                                        <div class="card-footer mt-auto">
+                                            <a class="btn btn-block btn-warning" href="reader.html">Read for $0.99</a>
+                                        </div>
+                                    </div>
+                                    <div class="card border-0 mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                                <div class="media-body overflow-hidden">
+                                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                            <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                        </a>
+                                        <div class="card-img-center position-relative"
+                                           data-type="gallery" data-image="images/books/4/cover.jpg"
+                                           style="background: url(images/books/4/preview.jpg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                        </div>
+                                        <div class="card-footer mt-auto">
+                                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="mb-5">
+                                <header>
+                                    <h3>The Second cycle name</h3>
+                                    <hr>
+                                </header>
+                                <p>
+                                    Maiores culpa architecto dolorum beatae repellat. Placeat laudantium quia quo explicabo velit officia accusantium suscipit ipsa sint. Inventore nobis ex dicta tenetur unde mollitia tempore, ipsa. Autem adipisci, quam obcaecati!
+                                </p>
+                                <div class="owl-carousel owl-theme">
+                                    <div class="card border-0 mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                                <div class="media-body overflow-hidden">
+                                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                            <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                        </a>
+                                        <div class="card-img-center position-relative"
+                                           data-type="gallery" data-image="images/books/1/cover.jpg"
+                                           style="background: url(images/books/1/preview.jpg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                        </div>
+                                        <div class="card-footer mt-auto">
+                                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                        </div>
+                                    </div>
+                                    <div class="card border-0 mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                                <div class="media-body overflow-hidden">
+                                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                            <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                        </a>
+                                        <div class="card-img-center position-relative"
+                                           data-type="gallery" data-image="images/books/2/cover.jpg"
+                                           style="background: url(images/books/2/preview.jpg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                        </div>
+                                        <div class="card-footer mt-auto">
+                                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                        </div>
+                                    </div>
+                                    <div class="card border-0 mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                                <div class="media-body overflow-hidden">
+                                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                            <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                        </a>
+                                        <div class="card-img-center position-relative"
+                                           data-type="gallery" data-image="images/books/5/cover.jpg"
+                                           style="background: url(images/books/5/preview.jpg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                        </div>
+                                        <div class="card-footer mt-auto">
+                                            <a class="btn btn-block btn-warning" href="reader.html">Read for $0.25</a>
+                                        </div>
+                                    </div>
+                                    <div class="card border-0 mb-4 shadow-sm">
+                                        <div class="card-header">
+                                            <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                                <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                                <div class="media-body overflow-hidden">
+                                                    <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                                    <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                            <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                        </a>
+                                        <div class="card-img-center position-relative"
+                                           data-type="gallery" data-image="images/books/6/cover.jpg"
+                                           style="background: url(images/books/6/preview.jpg) no-repeat scroll center center / cover;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                        </div>
+                                        <div class="card-footer mt-auto">
+                                            <a class="btn btn-block btn-success" href="reader.html">Read for free</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-free" role="tabpanel" aria-labelledby="pills-free-tab">
+                        <h2 class="h3 d-sm-none">Out of cycles</h2>
+                        <div id="profileOutOfCyclesFull" class="card-deck">
+                            <div class="card border-0 mb-4 shadow-sm">
+                                <div class="card-header">
+                                    <a class="media d-flex align-items-center text-decoration-none" href="profile.html">
+                                        <img class="image-42 rounded-circle shadow-sm mr-3 w-auto" alt="Имя пользователя" src="images/users/0/preview.svg">
+                                        <div class="media-body overflow-hidden">
+                                            <span class="text-ellipsis">Имя пользователя не слабое</span>
+                                            <time class="d-block text-muted small mb-1" datetime="2019-10-22T21:30"><i class="fas fa-calendar-day mr-2"></i>22 October 2019</time>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="book.html" class="card-body" data-toggle="tooltip" data-placement="top" title="The long title of the book: chapter one">
+                                    <span class="card-title h5 mb-0 text-ellipsis">The long title of the book: chapter one</span>
+                                </a>
+                                <div class="card-img-center position-relative"
+                                   data-type="gallery" data-image="images/books/7/cover.jpg"
+                                   style="background: url(images/books/7/preview.jpg) no-repeat scroll center center / cover;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none"><title>Название книги</title></svg>
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    <a class="btn btn-block btn-warning" href="reader.html">Read for $2</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+        
+        <script>
+            $(document).ready(function() {
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    margin: 30,
+                    lazyLoad: true,
+                    rewind: true,
+                    navContainerClass: "owl-nav w-100",
+                    navText: ["<i class='h1 m-0 fas fa-arrow-alt-circle-left'></i>","<i class='h1 m-0 fas fa-arrow-alt-circle-right'></i>"],
+                    responsive:{
+                        0:   {
+                            items: 1,
+                            autoplay: false,
+                        },
+                        576: {
+                            items: 2,
+                            nav: true,
+                            autoplay: true,
+                            autoplayTimeout: 6000,
+                            autoplayHoverPause: true,
+                        },
+                        992: {
+                            items: 3,
+                            nav: true,
+                            autoplay: true,
+                            autoplayTimeout: 6000,
+                            autoplayHoverPause: true,
+                        },
+                        1200:{
+                            items: 4,
+                            nav: true,
+                            autoplay: true,
+                            autoplayTimeout: 6000,
+                            autoplayHoverPause: true,
+                        }
+                    }
+                });
+            });
+        </script>
+        
+    </body>
+</html>

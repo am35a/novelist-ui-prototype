@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <div class="container my-5">
+                <header>
+                    <h1>Agreements & Policies</h1>
+                    <hr>
+                </header>
+                <div class="row">
+                    <header class="col-md-3 col-xl-2">
+                        <div class="nav flex-md-column nav-pills" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="UserAgreementTab" href="#UserAgreement" data-toggle="pill" role="tab" aria-controls="UserAgreement" aria-selected="true">User agreement</a>
+                            <a class="nav-link" id="PrivacyPolicyTab" href="#PrivacyPolicy" data-toggle="pill" role="tab" aria-controls="PrivacyPolicy" aria-selected="false">Privacy policy</a>
+                            <a class="nav-link" id="CookiePolicyTab" href="#CookiePolicy" data-toggle="pill" role="tab" aria-controls="CookiePolicy" aria-selected="false">Cookie policy</a>
+                        </div>
+                    </header>
+                    <div class="col-md-9 col-xl-10 tab-content">
+                        <section class="tab-pane fade show active" id="UserAgreement" role="tabpanel" aria-labelledby="UserAgreementTab">
+                            <h2>User agreement</h2>
+                            <!--#include file="_user-agreement.htm"-->
+                        </section>
+                        <section class="tab-pane fade" id="PrivacyPolicy" role="tabpanel" aria-labelledby="PrivacyPolicyTab">
+                            <h2>Privacy policy</h2>
+                            <!--#include file="_privacy-policy.htm"-->
+                        </section>
+                        <section class="tab-pane fade" id="CookiePolicy" role="tabpanel" aria-labelledby="CookiePolicyTab">
+                            <h2>Cookie policy</h2>
+                            <!--#include file="_cookie-policy.htm"-->
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+        
+        <script type="text/javascript">
+            /* Open goal tab from other page */
+            $(document).ready(function() {
+                var hash = window.location.hash;
+                var target = $('[data-toggle="pill"][href="' + hash + '"]');
+                target.trigger('click');
+//                target[0].scrollIntoView(true);
+            });
+        </script>
+        
+    </body>
+</html>

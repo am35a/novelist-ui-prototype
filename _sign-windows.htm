@@ -1,0 +1,83 @@
+
+<!--    Start Modal sign-windows    -->
+    <!--    Sign in modal    -->
+        <div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="modalSignInTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalSignInTitle">Please sign in</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger border-0 d-none"><i class="fas fa-exclamation-circle mr-3"></i>Wrong "eMail" or "Password"!</div>
+                        <label for="inputEmail" class="sr-only">eMail</label>
+                        <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email address" required="" autofocus="">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required="">
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input id="rememberMe" class="custom-control-input" type="checkbox">
+                            <label class="custom-control-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button id="buttonRememberMe" class="btn btn-link p-0 float-right" data-dismiss="modal" data-toggle="modal" data-target="#modalRememberMe" type="button">Forgot password?</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-decoration-none" data-dismiss="modal"><i class="fas fa-times mr-2"></i>Close</button>
+                        <button class="btn btn-primary" type="submit" disabled><i class="fas fa-sign-in-alt mr-2"></i>Sign in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    Remember me modal    -->
+        <div class="modal fade" id="modalRememberMe" tabindex="-1" role="dialog" aria-labelledby="modalRememberMeTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalRememberMeTitle">Please remember me</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-info border-0"><i class="fas fa-info-circle mr-3"></i>Для воcстановления доступа к аккаунту необходим емайл к которому привязана учетная запись.</div>
+                        <div class="alert alert-danger border-0 d-none"><i class="fas fa-exclamation-circle mr-3"></i>Учетная запись с таким адресом не найдена!</div>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputRememberEmail" class="form-control mb-3" placeholder="Email address" required="" autofocus="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-decoration-none" data-dismiss="modal"><i class="fas fa-times mr-2"></i>Close</button>
+                        <button class="btn btn-primary" type="submit" disabled><i class="fas fa-sign-in-alt mr-2"></i>Remember me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    Sign up modal    -->
+        <div class="modal fade" id="modalSignUp" tabindex="-1" role="dialog" aria-labelledby="modalSignUpTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0">
+                    <div class="modal-header bg-light">
+                        <div class="h5 modal-title" id="modalSignUpTitle">Sign up</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times small"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger border-0 d-none"><i class="fas fa-exclamation-circle mr-3"></i>Учетная запись с таким адресом уже существует!</div>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email address" required="" autofocus="">
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input id="userAgreement" class="custom-control-input" type="checkbox">
+                            <label class="custom-control-label" for="userAgreement">By registering you agree to the conditions:</label> <a href="agreements-policies.html" target="_blank">User agreement...</a>, <a href="agreements-policies.html#PrivacyPolicy" target="_blank">Privacy policy...</a> and <a href="agreements-policies.html#CookiePolicy" target="_blank">Cookie policy...</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-decoration-none" data-dismiss="modal"><i class="fas fa-times mr-2"></i>Close</button>
+                        <button class="btn btn-success" type="submit" disabled><i class="fas fa-user-plus mr-2"></i>Create account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--    End Modal sign-windows    -->

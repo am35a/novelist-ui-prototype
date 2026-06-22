@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+    </head>
+    <body>
+        <!--#include file="_header-guest.htm"-->
+        <main class="min-vh-100">
+            <!--#include file="_book-page-info.htm"-->
+
+            <div class="nav-scroller position-relative overflow-hidden border-bottom bg-white shadow-sm mb-4">
+                <nav class="nav d-flex flex-nowrap overflow-auto pb-0 container">
+                    <a class="nav-link text-nowrap" href="book.html" title="Name of the book"><i class="fas fa-book"></i></a>
+                    <span class="nav-link border-left px-0"></span>
+                    <a class="nav-link text-nowrap disabled" href="book-mentions.html">Mentions <span class="badge badge-pill bg-secondary text-light">27</span></a>
+                    <a class="nav-link text-nowrap" href="book-illustrations.html">Illustrations <span class="badge badge-pill bg-secondary text-light">9</span></a>
+                    <a class="nav-link text-nowrap" href="book-quotations.html">Quotations <span class="badge badge-pill bg-secondary text-light">18</span></a>
+                    <a class="nav-link text-nowrap" href="book-reviews.html">Reviews <span class="badge badge-pill bg-secondary text-light">3</span></a>
+                    <a class="nav-link text-nowrap" href="book-guestbook.html">Guestbook <span class="badge badge-pill bg-secondary text-light">843</span></a>
+                    <a class="nav-link text-nowrap" href="book-bookmarks.html">In bookmarks <span class="badge badge-pill bg-secondary text-light">3</span></a>
+                    <a class="nav-link text-nowrap" href="book-activity.html">Activity</a>
+                    <a class="nav-link text-nowrap" href="book-statistic.html">Statistic</a>
+                </nav>
+            </div>
+            
+            <section class="container">
+                <header class="mb-3">
+                    <h2>Mentions</h2>
+                </header>               
+               
+                <div class="btn-toolbar">
+                    <div class="position-relative flex-grow-1" data-action="clearable">
+                        <input id="inputInMentionsSearch" class="form-control" type="search" placeholder="Search by keywords, names, mention types or ect." aria-label="Search">
+                        <button class="btn btn-link position-absolute t-0 r-0 px-2 bg-white bg-clip-padding border-transparent" style="display: none;" data-action="clear"><i class="fas fa-backspace fa-lg"></i></button>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden border-bottom small mb-3">
+                    <div class="nav d-flex flex-nowrap container overflow-auto pb-0">
+                        <span class="nav-link text-nowrap text-dark">Sort by:</span>
+                        <a class="nav-link text-nowrap" href="#">Heroes<i class="fas fa-sort-amount-up ml-1"></i></a>
+                        <a class="nav-link text-nowrap" href="#">Places</a>
+                        <a class="nav-link text-nowrap" href="#">Other</a>
+                    </div>
+                </div>
+                <div id="bookMentionsList" class="card-columns">
+                   
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header overflow-hidden">
+                            <span class="text-ellipsis">Mention title</span>
+                            <span class="mb-1 small text-muted">Heroes</span>
+                        </div>
+                        <figure class="position-relative mb-0 img-fluid" data-type="gallery" data-image="https://c.wallhere.com/photos/8f/d0/2D_fan_art-318615.jpg!d">
+                            <img src="https://c.wallhere.com/photos/8f/d0/2D_fan_art-318615.jpg!d" class="card-img-center" alt="...">
+                        </figure>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-mention.html">Read mention</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header overflow-hidden">
+                            <span class="text-ellipsis">Mention title</span>
+                            <span class="mb-1 small text-muted">Places</span>
+                        </div>
+                        <figure class="position-relative mb-0 img-fluid" data-type="gallery" data-image="https://i.pinimg.com/originals/c8/20/9d/c8209d4a08c1397e7573f29ff196479c.jpg">
+                            <img src="https://i.pinimg.com/originals/c8/20/9d/c8209d4a08c1397e7573f29ff196479c.jpg" class="card-img-center" alt="...">
+                        </figure>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-mention.html">Read mention</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header overflow-hidden">
+                            <span class="text-ellipsis">Mention title</span>
+                            <span class="mb-1 small text-muted">Heroes</span>
+                        </div>
+                        <figure class="position-relative mb-0 img-fluid" data-type="gallery" data-image="https://i.pinimg.com/originals/4a/9d/c3/4a9dc3e04dc862580b7f56988e27a4ee.jpg">
+                            <img src="https://i.pinimg.com/originals/4a/9d/c3/4a9dc3e04dc862580b7f56988e27a4ee.jpg" class="card-img-center" alt="...">
+                        </figure>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-mention.html">Read mention</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header overflow-hidden">
+                            <span class="text-ellipsis">Mention title</span>
+                            <span class="mb-1 small text-muted">Places</span>
+                        </div>
+                        <figure class="position-relative mb-0 img-fluid" data-type="gallery" data-image="https://i.pinimg.com/originals/c9/ac/d5/c9acd570a289defbe16d4d9b443a1d44.jpg">
+                            <img src="https://i.pinimg.com/originals/c9/ac/d5/c9acd570a289defbe16d4d9b443a1d44.jpg" class="card-img-center" alt="...">
+                        </figure>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-mention.html">Read mention</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header overflow-hidden">
+                            <span class="text-ellipsis">Mention title</span>
+                            <span class="mb-1 small text-muted">Other</span>
+                        </div>
+                        <figure class="position-relative mb-0 img-fluid" data-type="gallery" data-image="https://gamemag.ru/images/cache/News/News141135/c4242d764a-2_1390x600.jpg">
+                            <img src="https://gamemag.ru/images/cache/News/News141135/c4242d764a-2_1390x600.jpg" class="card-img-center" alt="...">
+                        </figure>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-mention.html">Read mention</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 mb-4 shadow-sm">
+                        <div class="card-header overflow-hidden">
+                            <span class="text-ellipsis">Mention title</span>
+                            <span class="mb-1 small text-muted">Other</span>
+                        </div>
+                        <figure class="position-relative mb-0 img-fluid" data-type="gallery" data-image="https://i.pinimg.com/originals/9c/49/4c/9c494c715ca26876b9933fd6b27fecd7.jpg">
+                            <img src="https://i.pinimg.com/originals/9c/49/4c/9c494c715ca26876b9933fd6b27fecd7.jpg" class="card-img-center" alt="...">
+                        </figure>
+                        <div class="card-footer">
+                            <a class="btn btn-block btn-primary" href="book-mention.html">Read mention</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <footer>
+                    <button id="buttonMentionsLoadMore" class="btn btn-block btn-outline-primary" type="button"><i class="fas fa-arrow-alt-circle-down mr-2"></i>Load more mentions...</button>
+                </footer>
+            </section>
+        </main>
+        <!--#include file="_footer.htm"-->
+        <!--#include file="_sign-windows.htm"-->
+    </body>
+</html>

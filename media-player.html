@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Название сайта - краткое описание</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/modification.css">
+        <link rel="stylesheet" href="css/starrr.css">
+        <link rel="stylesheet" href="css/media-player.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="js/forallpages.js"></script>
+        <script src="js/starrr.js"></script>
+        <script src="js/reader.js"></script>
+        
+        <script>
+            $(function(){
+
+
+                $('.playerOpen').on('click', function(){
+                    $('#mediaPlayer').addClass('d-flex');
+                    $('html').css('overflow', 'hidden');
+                });
+
+                
+                
+                // Close player window (stop playing and record current read place)
+                $('#playerClose').on('click', function(){
+                    $('#mediaPlayer').removeClass('d-flex');
+                    $('html').css('overflow', 'auto');
+                });
+                
+                // Read time range control
+                $('#playerRange').change(function(){
+                    $('#playerRangeProgressBar')
+                        .attr('style', 'width: ' + $(this).val() + '%;')
+                        .attr('aria-valuenow', $(this).val());
+                });
+                
+                $('#playerBookInfo').on('click', function(){
+                    $('#playerMainWindow').removeClass('d-fade-in').addClass('d-fade-out');
+                    $('#playerBookInfoWindow').removeClass('d-fade-out').addClass('d-fade-in');
+                });
+                $('#playerBookInfoClose').on('click', function(){
+                    $('#playerBookInfoWindow').removeClass('d-fade-in').addClass('d-fade-out');
+                    $('#playerMainWindow').removeClass('d-fade-out').addClass('d-fade-in');
+                });
+                
+                $('#playerChapterList').on('click', function(){
+                    $('#playerMainWindow').removeClass('d-fade-in').addClass('d-fade-out');
+                    $('#playerChapterListWindow').removeClass('d-fade-out').addClass('d-fade-in');
+                });
+                $('#playerChapterListClose').on('click', function(){
+                    $('#playerChapterListWindow').removeClass('d-fade-in').addClass('d-fade-out');
+                    $('#playerMainWindow').removeClass('d-fade-out').addClass('d-fade-in');
+//                    $('#playerMainWindow, #playerChapterListWindow').toggleClass('d-fade-in, d-fade-out');
+                });
+
+            });
+        </script>
+        
+    </head>
+    <body>
+        <!--include file="_header.htm-"-->
+        <main class="min-vh-100">
+            ...
+        </main>
+        <div id="mediaPlayer" class="media-player fixed-top w-100 h-100 d-none d-flex">
+            <div class="player-bg fixed-top w-100 h-100" style="background-image: linear-gradient(to left, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.15)), url(images/books/3/preview.jpg);"></div>
+            
+            <div id="playerBookInfoWindow" class="d-flex fixed-top w-100 h-100 overflow-auto d-fade-out">
+                <div class="col-md-6 m-auto">
+                    <h4 class="my-3 text-center">Title of the book</h4>
+                    <div class="pb-5">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <h5>Author</h5>
+                                <p class="small pl-2">Name Surename</p>
+                                <h5>Reader</h5>
+                                <p class="small pl-2">Reader Name</p>
+                                <h5>Genre</h5>
+                                <p class="small pl-2">Genre one, Genre two</p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h5>Total lenght</h5>
+                                <p class="small pl-2">45:23:45</p>
+                                <h5>Chapters</h5>
+                                <p class="small pl-2">5</p>
+                                <h5>Books series</h5>
+                                <p class="small pl-2">The name of a series of books</p>
+                            </div>
+                        </div>
+                        <h5>Annotation</h5>
+                        <div class="small pl-2">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta mollitia quae blanditiis pariatur perferendis aliquam, voluptatem inventore laborum porro reprehenderit, saepe commodi delectus dolores praesentium animi vitae illo excepturi quia.</p>
+                            <p>Sint in, voluptate saepe libero architecto assumenda vero autem dignissimos repellendus. Consectetur deserunt eos illo, praesentium quae assumenda amet! Sapiente ullam eveniet nemo, atque corrupti porro, sit architecto perspiciatis similique!</p>
+                            <p>Quos, laudantium rem numquam ad saepe eveniet nihil ipsum autem eius totam esse deserunt soluta sunt illo adipisci accusamus, molestias reiciendis cumque reprehenderit iure repudiandae blanditiis, magni explicabo. Tenetur, quisquam.</p>
+                        </div>
+                    </div>
+                    <div class=" fixed-bottom w-100 bg-dark">
+                        <button id="playerBookInfoClose" class="btn btn-block btn-link text-light" type="button"><i class="fas fa-times fa-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="playerChapterListWindow" class="d-flex fixed-top w-100 h-100 overflow-auto d-fade-out">
+                <div class="col-md-6 m-auto">
+                    <h4 class="my-3 text-center">Table of contents</h4>
+                    <div class="pb-5">
+                        <button class="btn btn-block btn-sm d-flex flex-wrap text-left mb-3" type="button" disabled>
+                            <h5 class="mb-1 flex-grow-1">Cras justo odio</h5>
+                            <span class="small my-auto">13:45.21</span>
+                            <p class="mb-1 small pl-2 w-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate sapiente itaque vitae voluptatem minima nisi.</p>
+                        </button>
+                        <button class="btn btn-block btn-sm d-flex flex-wrap text-left mb-3" type="button">
+                            <h5 class="mb-1 flex-grow-1">Dapibus ac facilisis in</h5>
+                            <span class="small my-auto">04:05.11</span>
+                            <p class="mb-1 small pl-2 w-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </button>
+                        <button class="btn btn-block btn-sm d-flex flex-wrap text-left mb-3" type="button">
+                            <h5 class="mb-1 flex-grow-1">Morbi leo risus</h5>
+                            <span class="small my-auto">33:21.15</span>
+                            <p class="mb-1 small pl-2 w-100">Lorem ipsum dolor sit amet, oluptate sapiente itaque vitae voluptatem minima nisi.</p>
+                        </button>
+                        <button class="btn btn-block btn-sm d-flex flex-wrap text-left mb-3" type="button">
+                            <h5 class="mb-1 flex-grow-1">Porta ac consectetur ac</h5>
+                            <span class="small my-auto">00:56.55</span>
+                            <p class="mb-1 small pl-2 w-100">Temporibus aspernatur reiciendis tenetur nihil sunt provident ratione quos quidem rerum, commodi voluptatib quae!</p>
+                        </button>
+                        <button class="btn btn-block btn-sm d-flex flex-wrap text-left mb-3" type="button">
+                            <h5 class="mb-1 flex-grow-1">Vestibulum at eros</h5>
+                            <span class="small my-auto">05:24.35</span>
+                            <p class="mb-1 small pl-2 w-100">Reiciendis tenetur nihil sunt provident ratione quos quidem rerum, commodi voluptatib quae.</p>
+                        </button>
+                    </div>
+                    <div class="position-fixed fixed-bottom w-100 bg-dark">
+                        <button id="playerChapterListClose" class="btn btn-block btn-link text-light" type="button"><i class="fas fa-times fa-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+                
+            <div id="playerMainWindow" class="col-md-6 m-auto d-fade-in">
+                <div class="d-flex flex-column p-md-4">
+                    <header class="row mt-2 mt-md-5 mb-4">
+                        <div class="col text-center">
+                            <button id="playerShareDropMenu" class="btn btn-link text-dark"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    type="button"><i class="fas fa-share-square fa-lg"></i></button>
+                            <div class="dropdown-menu border-0 bg-secondary shadow-sm py-0 overflow-hidden" aria-labelledby="userShareDropMenu">
+                                <a class="dropdown-item py-2" href="#"><i class="fab fa-facebook mr-2"></i>Facebook</a>
+                                <a class="dropdown-item py-2" href="#"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+                                <a class="dropdown-item py-2" href="#"><i class="fab fa-twitter mr-2"></i>Twitter</a>
+                            </div>
+                        </div>
+                        <div class="col text-center"><button id="playerBookInfo" class="btn btn-link text-dark" type="button"><i class="fas fa-info fa-lg"></i></button></div>
+                        <div class="col text-center"><button id="playerChapterList" class="btn btn-link text-dark" type="button"><i class="fas fa-list-ol fa-lg"></i></button></div>
+<!--                        <div class="col text-center"><button id="playerSpeed" class="btn btn-link text-dark text-decoration-none" type="button"><b>1.0x</b></button></div>-->
+                        <div class="col text-center">
+                            <div class="btn-group" role="group" aria-label="Media player window controls">
+                                <button id="playerMinimize" class="btn btn-link text-dark" type="button"><i class="fas fa-window-minimize"></i></button>
+                                <button id="playerClose" class="btn btn-link text-dark" type="button"><i class="fas fa-times fa-lg"></i></button>
+                            </div>
+                        </div>
+                        
+                    </header>
+                    <div class="mb-1">
+                        <div class="position-relative">
+                            <input id="playerRange" class="custom-range player-custom-range position-absolute" type="range" value="75" min="0" max="100">
+                            <div class="progress bg-white" style="height: 1px;">
+                                <div id="playerRangeProgressBar" class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <small class="float-left">10453</small>
+<!--                            <small class="float-left">16:54:12</small>-->
+                            <div class="flex-grow-1 text-center position-relative">
+                                <button id="playerSpeedDropMenu" class="btn btn-link text-dark"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        type="button"><i class="fas fa-tachometer-alt fa-lg"></i></button>
+                                <div class="dropdown-menu dropdown-menu-center border-0 bg-secondary text-center shadow-sm py-0 overflow-hidden" aria-labelledby="playerSpeedDropMenu">
+                                    <button class="dropdown-item py-2 active" tupe="button">Reader speed 1.0x</button>
+                                    <button class="dropdown-item py-2" tupe="button">Reader speed 1.5x</button>
+                                    <button class="dropdown-item py-2" tupe="button">Reader speed 2.0x</button>
+                                </div>
+                            </div>
+                            <small class="float-right">3840</small>
+<!--                            <small class="float-right">-1:03:43</small>-->
+                        </div>
+                    </div>
+                    <div class="card-img-center position-relative rounded col-10 col-sm-8 col-lg-6 p-0 m-auto" style="background: url(images/books/3/preview.jpg) no-repeat scroll center center / cover;" data-type="gallery" data-image="images/books/3/cover.jpg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512"><title>Название книги</title><rect class="cls-1" width="1" height="1" /></svg>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button class="btn btn-lg btn-link text-dark" type="button"><i class="fas fa-chevron-circle-left fa-lg"></i></button>
+                        <div class="flex-grow-1 align-self-center text-ellipsis text-center">Chapter #1</div>
+                        <button class="btn btn-lg btn-link text-dark" type="button"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+                    </div>
+                    <div class="d-flex mt-3 mb-2 mb-md-5 mx-auto">
+                        <span class="pt-3 mt-2 mr-4">
+                            <button class="btn btn-lg btn-link text-dark" type="button"><i class="fas fa-backward fa-2x"></i></button>
+                            <div class="text-center small">-100 sig</div>
+                        </span>
+                        <input id="plyerPlayCheck" class="position-absolute d-none" type="checkbox" checked>
+                        <label class="mx-4 my-auto" for="plyerPlayCheck">
+                            <i class="fas fa-play fa-4x"></i>
+                            <i class="fas fa-pause fa-4x"></i>
+                        </label>
+<!--                        <button id="playerPlay" class="btn btn-link text-dark mx-4" type="button"><i class="fas fa-play fa-4x"></i></button>-->
+<!--                        <button id="playerPlay" class="btn btn-link text-dark mx-4" type="button"><i class="fas fa-pause fa-4x"></i></button>-->
+                        <span class="pt-3 mt-2 ml-4">
+                            <button class="btn btn-lg btn-link text-dark" type="button"><i class="fas fa-forward fa-2x"></i></button>
+                            <div class="text-center small">+100 sig</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!--include file="_footer.htm"-->
+    </body>
+</html>
